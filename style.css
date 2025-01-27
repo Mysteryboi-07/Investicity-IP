@@ -25,6 +25,11 @@ body {
     margin-bottom: 20px;
 }
 
+.small-logo {
+    width: 1vw;
+    max-width: 200px;
+}
+
 .title {
     font-size: 1.2vw;
     font-weight: bold;
@@ -62,3 +67,42 @@ body {
         padding: 3vh 8vw;
     }
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+
+button {
+    width: 60%;
+    max-width: 220px;
+    padding: 80px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
