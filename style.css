@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,28 +14,49 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .container {
     text-align: center;
 }
 
+#ahhh {
+    margin-bottom: 25px;
+    font-size: 1.7vw;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
 .logo {
-    width: 80vw;
-    max-width: 450px;
-    min-width: 300px;
-    margin-bottom: 20px;
+    width: 400px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .small-logo {
-    width: 1vw;
-    max-width: 200px;
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+    margin-top: -100px;
+    margin-bottom: 60px
 }
 
-.title {
-    font-size: 1.2vw;
+.brand {
+    font-size: 3vw;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    margin-top: -100px;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .buttons {
@@ -73,36 +96,36 @@ form {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%;
 }
 
 input {
-    width: 80%;
-    max-width: 300px;
-    padding: 10px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 24px;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
     padding-left: 15px;
 }
 
-
 button {
     width: 60%;
     max-width: 220px;
-    padding: 80px;
+    padding: 12px;
     border: 2px solid white;
     border-radius: 25px;
     background: black;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
     white-space: nowrap;
+    text-align: center;
 }
 
 button:hover {
     background: white;
     color: black;
 }
-
