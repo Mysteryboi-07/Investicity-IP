@@ -1,29 +1,43 @@
 const APIKEY = "6796fc41f9d2bb1866181e28";
 const BASE_URL = "https://investicity-c8aa.restdb.io/rest/investicity-data";
 
-document.addEventListener("DOMContentLoaded", function () {
-  initializeApp();
-});
+// Only run the authentication logic on the index page.
+if (document.body.id === "index-page") {
+  document.addEventListener("DOMContentLoaded", initializeApp);
+}
 
 function initializeApp() {
-  const signupButton = document.getElementById("signup-btn");
-  const loginButton = document.getElementById("login-btn");
+  // Remove any inline onclicks and use these event listeners instead.
+  document.getElementById("signup-link").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    toggleForms("signup");
+  });
+  document.getElementById("login-link").addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleForms("login");
+  });
+  document.getElementById("login-form-element").addEventListener("submit", handleLogin);
+  document.getElementById("signup-form-element").addEventListener("submit", handleSignup);
+}
 
-  console.log("Signup Button: ", signupButton);
-  console.log("Login Button: ", loginButton);
+function toggleForms(formToShow) {
+  const loginContainer = document.getElementById("login-form");
+  const signupContainer = document.getElementById("signup-form");
 
-  if (signupButton && loginButton) {
-    signupButton.addEventListener("click", handleSignup);
-    loginButton.addEventListener("click", handleLogin);
+  if (formToShow === "login") {
+    loginContainer.style.display = "block";
+    signupContainer.style.display = "none";
+  } else if (formToShow === "signup") {
+    signupContainer.style.display = "block";
+    loginContainer.style.display = "none";
   }
 }
 
-
 function handleSignup(e) {
   e.preventDefault();
-  if (!validateForm("signup-form")) return;
+  if (!validateSignupForm()) return;
 
-  const userData = getFormData("signup-form");
+  const userData = getFormData("signup");
   toggleButton("signup-btn", true);
 
   const settings = createSettings("POST", userData);
@@ -40,9 +54,9 @@ function handleSignup(e) {
 
 function handleLogin(e) {
   e.preventDefault();
-  if (!validateForm("login-form")) return;
+  if (!validateForm("login")) return;
 
-  const { username, password } = getFormData("login-form");
+  const { username, password } = getFormData("login");
   toggleButton("login-btn", true);
 
   const settings = createSettings("GET");
@@ -93,6 +107,22 @@ function validateForm(type) {
       return false;
     }
   }
+  return true;
+}
+
+function validateSignupForm() {
+  // First, validate the basic fields
+  if (!validateForm("signup")) return false;
+  
+  // Then, check that the password and confirm password match
+  const password = document.getElementById("signup-password").value.trim();
+  const confirmPassword = document.getElementById("signup-confirm-password").value.trim();
+  
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+  
   return true;
 }
 

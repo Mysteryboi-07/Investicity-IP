@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Investicity</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investicity - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="home.js" defer></script>
 </head>
 <body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar collapsed" id="sidebar">
+    <!-- Menu button appears at the top -->
+    <button id="menu-btn" class="menu-btn">☰</button>
+    <ul>
+      <li>
+        <a href="#" id="buy-link">
+          <img src="Images/buy-logo.png" alt="Buy" class="nav-logo" />
+          <span class="nav-text">Buy</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="send-link">
+          <img src="Images/send-logo.png" alt="Send" class="nav-logo" />
+          <span class="nav-text">Send</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="sell-link">
+          <img src="Images/sell-logo.png" alt="Sell" class="nav-logo" />
+          <span class="nav-text">Sell</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
     <div class="container">
-        <h1>Welcome to Investicity!</h1>
-        <p>Your personalized investing platform.</p>
-        <button onclick="window.location.href='login.html'">Log Out</button>
+      <!-- Wallet Section -->
+      <div class="wallet-section">
+        <h2>My Wallet</h2>
+        <div class="wallet-balance">$26,439.52</div>
+      </div>
+
+      <!-- Popular Investments Section -->
+      <div class="popular-investments">
+        <h2>Popular</h2>
+        <div class="investment-list">
+          <div class="investment-item">
+            <span class="investment-name">VINE</span>
+            <span class="investment-value">249M</span>
+            <span class="investment-change">+3123%</span>
+          </div>
+          <div class="investment-item">
+            <span class="investment-name">TOSHI</span>
+            <span class="investment-value">279M</span>
+            <span class="investment-change">+18.04%</span>
+          </div>
+          <div class="investment-item">
+            <span class="investment-name">TRUMP</span>
+            <span class="investment-value">535B</span>
+            <span class="investment-change negative">-22.30%</span>
+          </div>
+          <div class="investment-item">
+            <span class="investment-name">VFD</span>
+            <span class="investment-value">199M</span>
+            <span class="investment-change">+8.27%</span>
+          </div>
+          <div class="investment-item">
+            <span class="investment-name">XCN</span>
+            <span class="investment-value">49.5M</span>
+            <span class="investment-change">+1.78%</span>
+          </div>
+          <div class="investment-item">
+            <span class="investment-name">FARTBOY</span>
+            <span class="investment-value">46.2M</span>
+            <span class="investment-change">+5.68%</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
 </body>
 </html>
