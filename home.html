@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="Images/Logo_wo_name.png" id="tab-logo">
   <title>Investicity - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js library (for the market chart) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Your JavaScript file for sidebar toggle and chart initialization -->
   <script src="home.js" defer></script>
 </head>
 <body>
   <!-- Sidebar Navigation -->
   <nav class="sidebar collapsed" id="sidebar">
-    <!-- Menu button appears at the top -->
-    <button id="menu-btn" class="menu-btn">☰</button>
+    <!-- Menu button as a single clickable element -->
+    <button id="menu-btn" class="menu-button">
+      <span class="menu-logo">☰</span>
+      <span class="menu-text">Menu</span>
+    </button>
     <ul>
+      <!-- Dropdown for Trends that now includes a Home button -->
+      <li class="dropdown">
+        <a href="#" id="trends-link" class="dropdown-toggle">
+          <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
+          <span class="nav-text">Trends</span>
+        </a>
+        <ul class="dropdown-menu">
+          <!-- Home button inside the Trends dropdown -->
+          <li>
+            <a href="home.html" id="home-link">
+              <img src="Images/home-icon.png" alt="Home" class="nav-logo">
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="buy-link">
+              <img src="Images/buy-logo.png" alt="Buy" class="nav-logo">
+              <span class="nav-text">Buy</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="send-link">
+              <img src="Images/send-logo.png" alt="Send" class="nav-logo">
+              <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="sell-link">
+              <img src="Images/sell-logo.png" alt="Sell" class="nav-logo">
+              <span class="nav-text">Sell</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- Other Navigation Items -->
       <li>
-        <a href="#" id="buy-link">
-          <img src="Images/buy-logo.png" alt="Buy" class="nav-logo" />
-          <span class="nav-text">Buy</span>
+        <a href="build-a-city.html" id="build-city-link">
+          <img src="Images/building-icon.png" alt="Build a City" class="nav-logo">
+          <span class="nav-text">Build City</span>
         </a>
       </li>
       <li>
-        <a href="#" id="send-link">
-          <img src="Images/send-logo.png" alt="Send" class="nav-logo" />
-          <span class="nav-text">Send</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" id="sell-link">
-          <img src="Images/sell-logo.png" alt="Sell" class="nav-logo" />
-          <span class="nav-text">Sell</span>
+        <a href="#" id="activity-link">
+          <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
+          <span class="nav-text">Activity</span>
         </a>
       </li>
     </ul>
-  </nav>
+  </nav>  
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="container">
+  <!-- Page Container: holds main content -->
+  <div class="page-container">
+    <!-- Main Content Area -->
+    <div class="main-content">
       <!-- Wallet Section -->
-      <div class="wallet-section">
-        <h2>My Wallet</h2>
-        <div class="wallet-balance">$26,439.52</div>
-      </div>
+      <section class="wallet-overview">
+        <h3>Your Wallet</h3>
+        <p>$26,439.52</p>
+        <p class="positive">+$237.84(0.14%) Today</p>
+      </section>
+
+      <!-- Market Charts Section -->
+      <section class="market-charts">
+        <h2>Market Trends</h2>
+        <!-- Chart container with fixed height to prevent stretching the page -->
+        <div class="chart-container">
+          <canvas id="marketChart"></canvas>
+        </div>
+      </section>
 
       <!-- Popular Investments Section -->
-      <div class="popular-investments">
-        <h2>Popular</h2>
+      <section class="popular-investments">
+        <h2>Popular Investments</h2>
         <div class="investment-list">
           <div class="investment-item">
             <span class="investment-name">VINE</span>
             <span class="investment-value">249M</span>
-            <span class="investment-change">+3123%</span>
+            <span class="investment-change positive">+3123%</span>
           </div>
           <div class="investment-item">
             <span class="investment-name">TOSHI</span>
             <span class="investment-value">279M</span>
-            <span class="investment-change">+18.04%</span>
+            <span class="investment-change positive">+18.04%</span>
           </div>
           <div class="investment-item">
             <span class="investment-name">TRUMP</span>
@@ -65,21 +113,60 @@
           <div class="investment-item">
             <span class="investment-name">VFD</span>
             <span class="investment-value">199M</span>
-            <span class="investment-change">+8.27%</span>
+            <span class="investment-change positive">+8.27%</span>
           </div>
           <div class="investment-item">
             <span class="investment-name">XCN</span>
             <span class="investment-value">49.5M</span>
-            <span class="investment-change">+1.78%</span>
+            <span class="investment-change positive">+1.78%</span>
           </div>
           <div class="investment-item">
             <span class="investment-name">FARTBOY</span>
             <span class="investment-value">46.2M</span>
-            <span class="investment-change">+5.68%</span>
+            <span class="investment-change positive">+5.68%</span>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- News Feed Section -->
+      <section class="news-feed">
+        <h2>Latest News</h2>
+        <div class="news-item">
+          <h3>Market Hits Record High</h3>
+          <p>
+            MicroStrategy unveils new name, reports accelerated bitcoin purchases in fourth quarter
+          </p>
+          <a href="https://www.cnbc.com/2025/02/05/microstrategy-unveils-new-name-reports-accelerated-bitcoin-purchases-in-fourth-quarter.html" target="_blank">Read more</a>
+        </div>
+        <div class="news-item">
+          <h3>Palantir Stocks Surge</h3>
+          <p>
+            Palantir Stock Soars As Much As 28% To All-Time High—Becoming $200 Billion Company
+          </p>
+          <a href="https://www.forbes.com/sites/dereksaul/2025/02/04/palantir-stock-soars-as-much-as-28-to-all-time-high-becoming-200-billion-company/" target="_blank">Read more</a>
+        </div>
+        <div class="news-item">
+          <h3>Global Economy Update</h3>
+          <p>
+            Global stock markets mixed tracking US rates outlook
+          </p>
+          <a href="https://sg.finance.yahoo.com/news/asian-markets-drop-trades-fret-030610670.html?guccounter=1" target="_blank">Read more</a>
+        </div>
+      </section>
     </div>
   </div>
+
+  <!-- Original Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Investicity. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#">About Us</a>
+        <a href="#">Support</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="sidebar.js" defer></script>
 </body>
 </html>

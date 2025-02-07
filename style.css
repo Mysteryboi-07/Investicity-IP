@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;700&display=swap');
 
 /* ---------------------------------
-   Global Styles & Resets
+   Global Resets & Base Styles
 -----------------------------------*/
 * {
   margin: 0;
@@ -14,10 +14,7 @@ body {
   background-color: black;
   color: white;
   min-height: 100vh;
-}
-
-/* Background image & overlay (if desired) */
-body {
+  /* Background image for home page */
   background-image: url('Images/home-background.avif');
   background-size: cover;
   background-position: center;
@@ -36,17 +33,23 @@ body::before {
   z-index: -1;
 }
 
-/* ---------------------------------
-   Common Container & Text Styles
------------------------------------*/
 .container {
   text-align: center;
+  margin-top: -10px;
   width: 100%;
 }
 
-h1.title {
+h1.title { 
   font-size: 2.5rem;
   margin: 20px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
 }
 
 .logo {
@@ -56,9 +59,56 @@ h1.title {
   margin: 0;
 }
 
-/* ---------------------------------
-   Form Styles (for login/signup pages)
------------------------------------*/
+.small-logo {
+  width: 150px;
+  height: auto;
+  margin-top: -100px;
+  margin-bottom: 60px;
+}
+
+.brand { 
+  font-size: 3vw;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: -100px;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 2vh 2vw;
+  margin: 10px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.2vw;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 60%; 
+    max-width: 200px; /* Adjusted size for mobile */
+  }
+  .btn {
+    font-size: 4vw;
+    padding: 3vh 8vw;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -98,137 +148,149 @@ button:hover {
   color: black;
 }
 
-/* ---------------------------------
-   Media Queries
------------------------------------*/
-@media (max-width: 768px) {
-  .logo {
-    width: 60%;
-    max-width: 200px;
-  }
-  
-  button {
-    font-size: 4vw;
-    padding: 3vh 8vw;
-  }
+#signup-form {
+  display: none; /* Hide signup form by default */
+}
+
+#show-signup, #show-login {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: underline;
+  margin-top: 20px;
 }
 
 /* ---------------------------------
-   Home Page: Collapsible Sidebar & Main Content
+   Sidebar Styles
 -----------------------------------*/
-
-/* Collapsible Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;            /* Expanded width */
+  width: 200px;            /* Expanded width */
   height: 100vh;
-  background-color: #000;
-  padding-top: 20px;
+  background-color: #111;
+  padding: 20px 10px;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 1000;
-  transition: width 0.3s;
+  transition: width 0.3s, padding 0.3s;
 }
 
-/* When the sidebar is collapsed, reduce its width */
 .sidebar.collapsed {
-  width: 80px;             /* Adjust this width as needed */
+  width: 80px;             /* Collapsed width */
+  padding: 10px 5px;
 }
 
-/* Menu button styles */
-.menu-btn {
-  background: none;
-  border: none;
+/* ---------------------------------
+   Menu Button (Entire Button Element)
+-----------------------------------*/
+.menu-button {
+  display: flex;
+  align-items: center;
+  background: none;        /* Remove default background */
+  border: none;            /* Remove default border */
   color: white;
-  font-size: 28px;
-  margin: 0 auto 20px auto;
-  display: block;
+  border-radius: 20px;
+  padding: 10px;
+  padding-right: 80px;
+  margin-left: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Sidebar list styles */
+.menu-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.menu-logo {
+  font-size: 32px;
+}
+
+.menu-text {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed .menu-button .menu-text {
+  display: none;
+  padding-right: 0px;
+}
+
+/* ---------------------------------
+   Sidebar Navigation Items
+-----------------------------------*/
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0 0;
 }
 
 .sidebar li {
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .sidebar a {
-  color: white;
-  text-decoration: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  transition: background 0.3s;
+  text-decoration: none;
+  color: white;
   padding: 10px;
+  transition: background 0.3s;
 }
 
 .sidebar a:hover {
   background-color: #333;
 }
 
-/* Nav logo images */
 .nav-logo {
-  width: 60px;     /* Default smaller size in collapsed mode */
-  height: 60px;
-  object-fit: cover;
-  transition: width 0.3s, height 0.3s;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
 }
 
-/* When sidebar is expanded (not collapsed), adjust nav-logo size */
-.sidebar:not(.collapsed) .nav-logo {
-  width: 300px;
-  height: 300px;
-}
-
-/* Navigation text labels */
 .nav-text {
-  margin-top: 10px;
+  margin-left: 10px;
   font-size: 1rem;
-  transition: opacity 0.3s;
+  white-space: nowrap;
 }
 
-/* Hide text labels when sidebar is collapsed */
 .sidebar.collapsed .nav-text {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
-/* Main Content Adjustments for Home Page */
+/* ---------------------------------
+   Main Content Styles
+-----------------------------------*/
 .main-content {
-  margin-left: 300px; /* Matches expanded sidebar width */
+  margin-left: 200px; /* Matches the expanded sidebar width */
   padding: 20px;
   transition: margin-left 0.3s;
 }
 
-/* When sidebar is collapsed, shift main content accordingly */
 .sidebar.collapsed ~ .main-content {
-  margin-left: 80px; /* Matches collapsed sidebar width */
+  margin-left: 80px;  /* Matches the collapsed sidebar width */
 }
 
 /* ---------------------------------
-   Wallet Section
+   Additional Content Styles
 -----------------------------------*/
-.wallet-section {
+/* Wallet Section */
+.wallet-overview {
   text-align: center;
   margin-top: 20px;
 }
 
-.wallet-balance {
-  font-size: 2.5rem;
-  margin: 20px 0;
+.wallet-overview p {
+  font-size: 1.5rem;
+}
+
+.wallet-overview .positive {
   color: #4CAF50;
 }
 
-/* ---------------------------------
-   Popular Investments Section
------------------------------------*/
+/* Popular Investments Section */
 .popular-investments {
   margin-top: 40px;
   text-align: center;
@@ -271,3 +333,111 @@ button:hover {
 .investment-change.negative {
   color: #FF5252;
 }
+
+/* ---------------------------------
+   Original Footer Styles
+-----------------------------------*/
+.footer {
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.footer-nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------
+   Stocks Chart Section
+--------------------------*/
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ------------------
+   News Section
+------------------*/
+.news-feed {
+  padding: 40px 20px;
+  color: white;
+  text-align: left;
+}
+
+.news-feed h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.news-item {
+  border-bottom: 1px solid #444;
+  padding: 20px 0;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.news-item p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.news-item a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------
+   Dropdown Menu Styles
+---------------------------------*/
+
+/* Hide dropdown submenu by default */
+.sidebar ul .dropdown-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;  /* Indentation for submenu items */
+  }
+  
+  /* When the parent dropdown has the "active" class, display the submenu */
+  .sidebar ul .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Style dropdown submenu items */
+  .sidebar ul .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul .dropdown-menu a {
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul .dropdown-menu a:hover {
+    background-color: #333;
+  }
+  

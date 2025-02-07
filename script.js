@@ -3,7 +3,7 @@ const BASE_URL = "https://investicity-c8aa.restdb.io/rest/investicity-data";
 
 // Only run the authentication logic on the index page.
 if (document.body.id === "index-page") {
-  document.addEventListener("DOMContentLoaded", initializeApp);
+  document.addEventListener("DOMContentLoaded", initializeApp); 
 }
 
 function initializeApp() {
