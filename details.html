@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asset Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="details.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="main-header">
+    <nav class="dropdown-nav">
+      <ul>
+        <li><a href="overview.html">Trade</a></li>
+        <li><a href="send.html">Send</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main>
+    <!-- Asset Details Header inside the body section -->
+    <header class="asset-details-header">
+      <div class="asset-info">
+        <img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo-large" id="asset-logo">
+        <div class="asset-text">
+          <h1 id="asset-name">Bitcoin</h1>
+          <p id="asset-price">$40,050</p>
+        </div>
+        <button id="trade-button">Trade</button>
+      </div>
+    </header>
+    
+    <!-- Asset Details Body -->
+    <section class="asset-body">
+      <section class="asset-graph">
+        <!-- Placeholder for a chart/graph (e.g., using Chart.js) -->
+        <canvas id="assetChart" width="400" height="300"></canvas>
+      </section>
+      <section class="asset-stats">
+        <h2>Asset Stats</h2>
+        <ul id="asset-stats-list">
+          <li>Market Cap: $800B</li>
+          <li>24h Volume: $30B</li>
+          <li>Circulating Supply: 18M BTC</li>
+          <!-- Additional stats as needed -->
+        </ul>
+      </section>
+      <aside class="other-assets">
+        <h2>Other Assets</h2>
+        <div class="other-assets-buttons">
+          <button onclick="location.href='details.html?asset=eth'">Ethereum</button>
+          <button onclick="location.href='details.html?asset=ltc'">Litecoin</button>
+          <!-- More asset buttons as needed -->
+        </div>
+      </aside>
+    </section>
+    
+    <!-- Trade Popup Modal -->
+    <div id="trade-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" id="close-modal">&times;</span>
+        <h2 id="modal-title">Trade Bitcoin</h2>
+        <p>Select an action:</p>
+        <button id="buy-asset">Buy</button>
+        <button id="sell-asset">Sell</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

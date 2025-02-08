@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asset Overview</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="overview.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="main-header">
+    <nav class="dropdown-nav">
+      <ul>
+        <li><a href="overview.html">Trade</a></li>
+        <li><a href="send.html">Send</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content: Asset Overview -->
+  <main>
+    <section class="asset-overview">
+      <h1>Asset Overview</h1>
+      <table class="assets-table">
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Asset Name</th>
+            <th>24h Change</th>
+            <th>Sell Price</th>
+            <th>Buy Price</th>
+          </tr>
+        </thead>
+        <tbody id="assets-tbody">
+          <!-- Example rows; in a real app these would be generated dynamically -->
+          <tr data-asset-id="btc">
+            <td><img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo"></td>
+            <td>Bitcoin</td>
+            <td class="positive">+2.34%</td>
+            <td>$40,000</td>
+            <td>$40,100</td>
+          </tr>
+          <tr data-asset-id="eth">
+            <td><img src="Images/eth-logo.png" alt="Ethereum Logo" class="asset-logo"></td>
+            <td>Ethereum</td>
+            <td class="negative">-1.12%</td>
+            <td>$2,500</td>
+            <td>$2,510</td>
+          </tr>
+          <!-- Add additional asset rows as needed -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

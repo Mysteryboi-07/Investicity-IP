@@ -1,26 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to increment the time labels on the chart.
-    function incrementTime(timeStr) {
-      let [hours, minutes] = timeStr.split(':').map(Number);
-      minutes++;
-      
-      if (minutes >= 60) {
-        minutes = 0;
-        hours++;
-        if (hours >= 24) {
-          hours = 0;
-        }
-      }
-      
-      const hoursStr = hours < 10 ? '0' + hours : hours;
-      const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-      return `${hoursStr}:${minutesStr}`;
+    const storedUsername = localStorage.getItem("username");
+    const storedUserID = localStorage.getItem("userID");
+    const storedNetWorth = localStorage.getItem("netWorth");
+    const storedDailyChange = localStorage.getItem("dailyChange");
+  
+    const userNameElem = document.querySelector(".user-name");
+    const userIDElem = document.querySelector(".user-id");
+
+    if (storedUsername && userNameElem) {
+      userNameElem.textContent = storedUsername;
+    }
+    if (storedUserID && userIDElem) {
+      userIDElem.textContent = "ID: " + storedUserID;
     }
   
-    // Get the context of the canvas element where the chart will be drawn.
-    const ctx = document.getElementById('marketChart').getContext('2d');
+    const walletOverview = document.querySelector(".wallet-overview");
+    if (walletOverview) {
+      const netWorthElem = walletOverview.querySelector("p:nth-of-type(1)");
+      const dailyChangeElem = walletOverview.querySelector("p:nth-of-type(2)");
   
-    // Initialize the Chart.js line chart.
+      if (storedNetWorth && netWorthElem) {
+        netWorthElem.textContent = "$" + parseFloat(storedNetWorth)
+          .toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      if (storedDailyChange && dailyChangeElem) {
+        dailyChangeElem.textContent = storedDailyChange;
+        if (storedDailyChange.trim().charAt(0) === "+") {
+          dailyChangeElem.classList.add("positive");
+          dailyChangeElem.classList.remove("negative");
+        } else {
+          dailyChangeElem.classList.add("negative");
+          dailyChangeElem.classList.remove("positive");
+        }
+      }
+    }
+  
+    // -------------------------------
+    // 2. Chart.js Market Trend Graph
+    // -------------------------------
+    
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    
     const marketChart = new Chart(ctx, {
       type: 'line',
       data: {
@@ -47,25 +67,36 @@ document.addEventListener("DOMContentLoaded", () => {
         maintainAspectRatio: false
       }
     });
-  
-    // Update the chart every 60 seconds.
+    
+    function incrementTime(timeStr) {
+      let [hours, minutes] = timeStr.split(':').map(Number);
+      minutes++;
+      if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+        if (hours >= 24) {
+          hours = 0;
+        }
+      }
+      const hoursStr = hours < 10 ? '0' + hours : hours;
+      const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+      return `${hoursStr}:${minutesStr}`;
+    }
+
     setInterval(() => {
-      // Calculate a new value based on the last data point.
-      let newValue = marketChart.data.datasets[0].data[marketChart.data.datasets[0].data.length - 1] * (0.995 + Math.random() * 0.01);
+      let lastDataPoint = marketChart.data.datasets[0].data[marketChart.data.datasets[0].data.length - 1];
+      let newValue = lastDataPoint * (0.995 + Math.random() * 0.01);
       
-      // Remove the oldest data point.
       marketChart.data.datasets[0].data.shift();
       marketChart.data.labels.shift();
-     
-      // Create a new label by incrementing the last label.
+      
       let lastLabel = marketChart.data.labels[marketChart.data.labels.length - 1];
       let newLabel = incrementTime(lastLabel);
       
-      // Add the new data point and label to the chart.
       marketChart.data.datasets[0].data.push(newValue);
       marketChart.data.labels.push(newLabel);
-    
-      // Update the chart to reflect the changes.
+      
       marketChart.update();
     }, 60000);
-  });  
+  });
+  

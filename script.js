@@ -33,24 +33,37 @@ function toggleForms(formToShow) {
   }
 }
 
+function generateRandomUserID() {
+  return Math.floor(1000000000 + Math.random() * 9000000000).toString();
+}
+
 function handleSignup(e) {
   e.preventDefault();
   if (!validateSignupForm()) return;
 
   const userData = getFormData("signup");
+  userData.userID = generateRandomUserID();
+  userData.netWorth = 0.00;
+  
   toggleButton("signup-btn", true);
 
   const settings = createSettings("POST", userData);
   
   fetch(BASE_URL, settings)
     .then(response => response.json())
-    .then(() => {
+    .then(newUser => {
+      localStorage.setItem("username", newUser.username);
+      localStorage.setItem("userID", newUser.userID);
+      localStorage.setItem("netWorth", newUser.netWorth);
+      localStorage.setItem("dailyChange", "$0 (0.00%) Today");
+      
       alert("Signup successful!");
       window.location.href = "home.html";
     })
     .catch(() => alert("Signup failed. Please try again."))
     .finally(() => toggleButton("signup-btn", false));
 }
+
 
 function handleLogin(e) {
   e.preventDefault();
@@ -59,15 +72,50 @@ function handleLogin(e) {
   const { username, password } = getFormData("login");
   toggleButton("login-btn", true);
 
-  const settings = createSettings("GET");
-  
+  const settings = createSettings("Get")
   fetch(BASE_URL, settings)
     .then(response => response.json())
     .then(users => {
       const user = users.find(u => u.username === username && u.password === password);
+      console.log(user)
       if (user) {
-        alert("Login successful!");
-        window.location.href = "home.html";
+        let currentNetWorth = parseFloat(user.netWorth);
+        let percentageChange = Math.random() * 10 - 5;
+        let newNetWorth = currentNetWorth * (1 + percentageChange / 100);
+        newNetWorth = parseFloat(newNetWorth.toFixed(2));
+        let diff = newNetWorth - currentNetWorth;
+        diff = parseFloat(diff.toFixed(2));
+        let sign = diff >= 0 ? "+" : "";
+        let formattedPercentage = Math.abs(percentageChange).toFixed(2) + "%";
+        let dailyChangeString = `${sign}$${Math.abs(diff).toFixed(2)} (${sign}${formattedPercentage}) Today`;
+
+        // Prepare settings for PATCH request to update the user's netWorth
+        const settings = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache"
+          },
+          body: JSON.stringify({ netWorth: newNetWorth })
+        };
+
+        // Update the user record using their document _id
+        fetch(`${BASE_URL}/${user._id}`, settings)
+          .then(response => response.json())
+          .then(updatedUser => {
+            // Store user info in localStorage
+            localStorage.setItem("username", updatedUser.username);
+            localStorage.setItem("userID", updatedUser.userID);
+            localStorage.setItem("netWorth", updatedUser.netWorth);
+            localStorage.setItem("dailyChange", dailyChangeString);
+
+            alert("Login successful!");
+            window.location.href = "home.html";
+          })
+          .catch(() => {
+            alert("Failed to update net worth.");
+          });
       } else {
         alert("Invalid username or password.");
       }

@@ -13,6 +13,12 @@
   <script src="home.js" defer></script>
 </head>
 <body>
+    <header class="user-header">
+        <div class="user-info">
+          <p class="user-id">8026517491</p>
+          <p class="user-name">SqueakyPotato</p>
+        </div>
+      </header>      
   <!-- Sidebar Navigation -->
   <nav class="sidebar collapsed" id="sidebar">
     <!-- Menu button as a single clickable element -->
@@ -26,6 +32,8 @@
         <a href="#" id="trends-link" class="dropdown-toggle">
           <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
           <span class="nav-text">Trends</span>
+          <!-- Arrow indicator: using a Unicode down arrow -->
+          <span class="arrow-indicator">&#9662;</span>
         </a>
         <ul class="dropdown-menu">
           <!-- Home button inside the Trends dropdown -->
@@ -36,36 +44,35 @@
             </a>
           </li>
           <li>
-            <a href="#" id="buy-link">
-              <img src="Images/buy-logo.png" alt="Buy" class="nav-logo">
-              <span class="nav-text">Buy</span>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
             </a>
           </li>
           <li>
-            <a href="#" id="send-link">
+            <a href="trade.html" id="send-link">
               <img src="Images/send-logo.png" alt="Send" class="nav-logo">
               <span class="nav-text">Send</span>
             </a>
           </li>
-          <li>
-            <a href="#" id="sell-link">
-              <img src="Images/sell-logo.png" alt="Sell" class="nav-logo">
-              <span class="nav-text">Sell</span>
-            </a>
-          </li>
         </ul>
       </li>
-      <!-- Other Navigation Items -->
       <li>
-        <a href="build-a-city.html" id="build-city-link">
-          <img src="Images/building-icon.png" alt="Build a City" class="nav-logo">
-          <span class="nav-text">Build City</span>
+        <a href="city.html" id="city-link">
+          <img src="Images/building-icon.png" alt="City" class="nav-logo">
+          <span class="nav-text">Your City<span>
         </a>
       </li>
       <li>
-        <a href="#" id="activity-link">
+        <a href="activity.html" id="activity-link">
           <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
-          <span class="nav-text">Activity</span>
+          <span class="nav-text">Recent</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html" id="community-link">
+          <img src="Images/community-icon.png" alt="community" class="nav-logo">
+          <span class="nav-text">Community</span>
         </a>
       </li>
     </ul>
