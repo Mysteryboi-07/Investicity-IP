@@ -27,26 +27,18 @@
       <span class="menu-text">Menu</span>
     </button>
     <ul>
-      <!-- Dropdown for Trends that now includes a Home button -->
+      <!-- Existing sidebar items -->
       <li class="dropdown">
         <a href="#" id="trends-link" class="dropdown-toggle">
           <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
           <span class="nav-text">Trends</span>
-          <!-- Arrow indicator: using a Unicode down arrow -->
           <span class="arrow-indicator">&#9662;</span>
         </a>
         <ul class="dropdown-menu">
-          <!-- Home button inside the Trends dropdown -->
           <li>
             <a href="home.html" id="home-link">
               <img src="Images/home-icon.png" alt="Home" class="nav-logo">
               <span class="nav-text">Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="overview.html" id="overview-link">
-              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
-              <span class="nav-text">Overview</span>
             </a>
           </li>
           <li>
@@ -55,12 +47,18 @@
               <span class="nav-text">Send</span>
             </a>
           </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
+            </a>
+          </li>
         </ul>
       </li>
       <li>
         <a href="city.html" id="city-link">
           <img src="Images/building-icon.png" alt="City" class="nav-logo">
-          <span class="nav-text">Your City<span>
+          <span class="nav-text">Your City</span>
         </a>
       </li>
       <li>
@@ -71,13 +69,21 @@
       </li>
       <li>
         <a href="community.html" id="community-link">
-          <img src="Images/community-icon.png" alt="community" class="nav-logo">
+          <img src="Images/community-icon.png" alt="Community" class="nav-logo">
           <span class="nav-text">Community</span>
         </a>
       </li>
     </ul>
-  </nav>  
-
+  
+    <!-- Logout Button at the Bottom -->
+    <div class="logout-container">
+      <a href="index.html" id="logout-link">
+        <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
+        <span class="nav-text">Logout</span>
+      </a>
+    </div>
+  </nav>
+  
   <!-- Page Container: holds main content -->
   <div class="page-container">
     <!-- Main Content Area -->
@@ -86,7 +92,7 @@
       <section class="wallet-overview">
         <h3>Your Wallet</h3>
         <p>$26,439.52</p>
-        <p class="positive">+$237.84(0.14%) Today</p>
+        <p class="positive">+$237.84(0.14%)</p>
       </section>
 
       <!-- Market Charts Section -->
@@ -98,42 +104,42 @@
         </div>
       </section>
 
-      <!-- Popular Investments Section -->
       <section class="popular-investments">
         <h2>Popular Investments</h2>
         <div class="investment-list">
-          <div class="investment-item">
+          <!-- Each investment is wrapped in an anchor tag linking to details.html with an asset query -->
+          <a href="details.html?asset=vine" class="investment-item">
             <span class="investment-name">VINE</span>
             <span class="investment-value">249M</span>
-            <span class="investment-change positive">+3123%</span>
-          </div>
-          <div class="investment-item">
+            <span class="investment-change positive">+31.23%</span>
+          </a>
+          <a href="details.html?asset=toshi" class="investment-item">
             <span class="investment-name">TOSHI</span>
             <span class="investment-value">279M</span>
             <span class="investment-change positive">+18.04%</span>
-          </div>
-          <div class="investment-item">
+          </a>
+          <a href="details.html?asset=trump" class="investment-item">
             <span class="investment-name">TRUMP</span>
             <span class="investment-value">535B</span>
             <span class="investment-change negative">-22.30%</span>
-          </div>
-          <div class="investment-item">
-            <span class="investment-name">VFD</span>
+          </a>
+          <a href="details.html?asset=ufd" class="investment-item">
+            <span class="investment-name">UFD</span>
             <span class="investment-value">199M</span>
             <span class="investment-change positive">+8.27%</span>
-          </div>
-          <div class="investment-item">
+          </a>
+          <a href="details.html?asset=xcn" class="investment-item">
             <span class="investment-name">XCN</span>
             <span class="investment-value">49.5M</span>
             <span class="investment-change positive">+1.78%</span>
-          </div>
-          <div class="investment-item">
+          </a>
+          <a href="details.html?asset=fartboy" class="investment-item">
             <span class="investment-name">FARTBOY</span>
             <span class="investment-value">46.2M</span>
             <span class="investment-change positive">+5.68%</span>
-          </div>
+          </a>
         </div>
-      </section>
+      </section>      
 
       <!-- News Feed Section -->
       <section class="news-feed">
@@ -147,17 +153,28 @@
         </div>
         <div class="news-item">
           <h3>Palantir Stocks Surge</h3>
-          <p>
-            Palantir Stock Soars As Much As 28% To All-Time High—Becoming $200 Billion Company
-          </p>
+          <p>Palantir Stock Soars As Much As 28% To All-Time High—Becoming $200 Billion Company</p>
           <a href="https://www.forbes.com/sites/dereksaul/2025/02/04/palantir-stock-soars-as-much-as-28-to-all-time-high-becoming-200-billion-company/" target="_blank">Read more</a>
         </div>
         <div class="news-item">
           <h3>Global Economy Update</h3>
-          <p>
-            Global stock markets mixed tracking US rates outlook
-          </p>
+          <p>Global stock markets mixed tracking US rates outlook</p>
           <a href="https://sg.finance.yahoo.com/news/asian-markets-drop-trades-fret-030610670.html?guccounter=1" target="_blank">Read more</a>
+        </div>
+        <div class="news-item">
+            <h3>Expanding into new sectors</h3>
+            <p>China tech stocks enter bull market territory</p>
+            <a href="https://www.investing.com/news/stock-market-news/china-tech-stocks-enter-bull-market-territory-3855698" target="_blank">Read more</a>
+        </div>
+        <div class="news-item">
+            <h3>Stock market today</h3>
+            <p>Dow, S&P 500, Nasdaq slide as inflation, tariff fears push stocks to another losing week</p>
+            <a href="https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-slide-as-inflation-tariff-fears-push-stocks-to-another-losing-week-210048275.html" target="_blank">Read more</a>
+        </div>
+        <div class="news-item">
+            <h3>New investment opportunity?</h3>
+            <p>Prediction: Nvidia Stock Is Going to Soar After Feb. 26</p>
+            <a href="https://www.nasdaq.com/articles/prediction-nvidia-stock-going-soar-after-feb-26" target="_blank">Read more</a>
         </div>
       </section>
     </div>

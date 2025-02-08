@@ -5,68 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asset Details</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="details.js" defer></script>
+  <script src="sidebar.js" defer></script>
 </head>
 <body>
-  <!-- Navigation Header -->
-  <header class="main-header">
-    <nav class="dropdown-nav">
-      <ul>
-        <li><a href="overview.html">Trade</a></li>
-        <li><a href="send.html">Send</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <!-- Main Content Section -->
-  <main>
-    <!-- Asset Details Header inside the body section -->
-    <header class="asset-details-header">
+  <!-- Global Sidebar -->
+  <nav class="sidebar collapsed" id="sidebar">
+    <!-- Sidebar content remains unchanged -->
+    <button id="menu-btn" class="menu-button">
+      <span class="menu-logo">☰</span>
+      <span class="menu-text">Menu</span>
+    </button>
+    <ul>
+      <li class="dropdown">
+        <a href="#" id="trends-link" class="dropdown-toggle">
+          <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
+          <span class="nav-text">Trends</span>
+          <span class="arrow-indicator">&#9662;</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="home.html" id="home-link">
+              <img src="Images/home-icon.png" alt="Home" class="nav-logo">
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="trade.html" id="send-link">
+              <img src="Images/send-logo.png" alt="Send" class="nav-logo">
+              <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="city.html" id="city-link">
+          <img src="Images/building-icon.png" alt="City" class="nav-logo">
+          <span class="nav-text">Your City</span>
+        </a>
+      </li>
+      <li>
+        <a href="activity.html" id="activity-link">
+          <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
+          <span class="nav-text">Recent</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html" id="community-link">
+          <img src="Images/community-icon.png" alt="Community" class="nav-logo">
+          <span class="nav-text">Community</span>
+        </a>
+      </li>
+    </ul>
+    <div class="logout-container">
+        <a href="index.html" id="logout-link">
+          <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
+          <span class="nav-text">Logout</span>
+        </a>
+      </div>
+  </nav>
+
+  <!-- Page Container for Main Content -->
+  <div class="page-container">
+    <!-- Asset Details Header (content header) -->
+    <header class="asset-details">
       <div class="asset-info">
-        <img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo-large" id="asset-logo">
-        <div class="asset-text">
+        <img id="asset-logo" src="Images/btc-logo.png" alt="Logo" class="asset-logo-large" />
+        <div class="asset-meta">
           <h1 id="asset-name">Bitcoin</h1>
-          <p id="asset-price">$40,050</p>
+          <p id="asset-price">$95,117.34</p>
         </div>
         <button id="trade-button">Trade</button>
       </div>
     </header>
-    
-    <!-- Asset Details Body -->
-    <section class="asset-body">
-      <section class="asset-graph">
-        <!-- Placeholder for a chart/graph (e.g., using Chart.js) -->
-        <canvas id="assetChart" width="400" height="300"></canvas>
-      </section>
-      <section class="asset-stats">
-        <h2>Asset Stats</h2>
-        <ul id="asset-stats-list">
-          <li>Market Cap: $800B</li>
-          <li>24h Volume: $30B</li>
-          <li>Circulating Supply: 18M BTC</li>
-          <!-- Additional stats as needed -->
-        </ul>
-      </section>
-      <aside class="other-assets">
-        <h2>Other Assets</h2>
-        <div class="other-assets-buttons">
-          <button onclick="location.href='details.html?asset=eth'">Ethereum</button>
-          <button onclick="location.href='details.html?asset=ltc'">Litecoin</button>
-          <!-- More asset buttons as needed -->
-        </div>
-      </aside>
-    </section>
-    
-    <!-- Trade Popup Modal -->
-    <div id="trade-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-button" id="close-modal">&times;</span>
-        <h2 id="modal-title">Trade Bitcoin</h2>
-        <p>Select an action:</p>
-        <button id="buy-asset">Buy</button>
-        <button id="sell-asset">Sell</button>
+
+    <!-- Main Asset Content: Two-column layout -->
+    <main class="asset-content">
+      <!-- Left Column: Graph and Stats -->
+      <div class="asset-left">
+        <section class="asset-graph">
+          <canvas id="assetChart" width="400" height="300"></canvas>
+        </section>
+        <section class="asset-stats">
+          <h2>Asset Stats</h2>
+          <ul id="asset-stats-list">
+            <li>Market Cap: $1.91T</li>
+            <li>24h Volume: $54.48B</li>
+            <li>Market Rank: 1</li>
+          </ul>
+        </section>
       </div>
+
+      <!-- Right Column: Other Assets -->
+      <div class="asset-right">
+        <aside class="other-assets">
+          <h2>Other Assets</h2>
+          <div class="other-assets-buttons">
+            <button onclick="location.href='details.html?asset=eth'">Ethereum</button>
+            <button onclick="location.href='details.html?asset=igp'">IguanaPasta</button>
+            <!-- Additional asset buttons as needed -->
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Trade Popup Modal -->
+  <div id="trade-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2 id="modal-title">Trade Bitcoin</h2>
+      <p>Select an action:</p>
+      <button id="buy-asset">Buy</button>
+      <button id="sell-asset">Sell</button>
     </div>
-  </main>
+  </div>
 </body>
 </html>

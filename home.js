@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
       }
       if (storedDailyChange && dailyChangeElem) {
-        dailyChangeElem.textContent = storedDailyChange;
+        dailyChangeElem.innerHTML = storedDailyChange;
         if (storedDailyChange.trim().charAt(0) === "+") {
           dailyChangeElem.classList.add("positive");
           dailyChangeElem.classList.remove("negative");
@@ -47,14 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
         labels: [
           '10:00', '10:01', '10:02', '10:03', '10:04', 
           '10:05', '10:06', '10:07', '10:08', '10:09', 
-          '10:10', '10:11', '10:12', '10:13'
+          '10:10', '10:11', '10:12', '10:13', '10:14',
+          '10:15', '10:16', '10:17', '10:18', '10:19',
+          '10:20', '10:21', '10:22', '10:23', '10:24',
+          '10:25', '10:26', '10:27', '10:28', '10:29'
         ],
         datasets: [{
           label: 'IguanaPasta',
           data: [
-            1543, 1521, 1519, 1527, 1533, 
-            1525, 1530, 1528, 1535, 1540, 
-            1538, 1542, 1539, 1545
+            1643, 1621, 1619, 1627, 1633, 
+            1585, 1590, 1581, 1556, 1540, 
+            1538, 1542, 1539, 1545, 1653,
+            1587, 1566, 1691, 1727, 1733,
+            1741, 1702, 1698, 1724, 1736,
+            1760, 1783, 1801, 1765, 1822
           ],
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',

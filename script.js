@@ -85,9 +85,9 @@ function handleLogin(e) {
         newNetWorth = parseFloat(newNetWorth.toFixed(2));
         let diff = newNetWorth - currentNetWorth;
         diff = parseFloat(diff.toFixed(2));
-        let sign = diff >= 0 ? "+" : "";
+        let sign = diff >= 0 ? "+" : "-";
         let formattedPercentage = Math.abs(percentageChange).toFixed(2) + "%";
-        let dailyChangeString = `${sign}$${Math.abs(diff).toFixed(2)} (${sign}${formattedPercentage}) Today`;
+        let dailyChangeString = `${sign}$${Math.abs(diff).toFixed(2)} (${sign}${formattedPercentage}) <span class="today">Today</span>`;
 
         // Prepare settings for PATCH request to update the user's netWorth
         const settings = {

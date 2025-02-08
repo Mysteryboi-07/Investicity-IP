@@ -5,53 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asset Overview</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Include the sidebar script (if used site-wide) -->
+  <script src="sidebar.js" defer></script>
+  <!-- Include overview-specific JS -->
   <script src="overview.js" defer></script>
 </head>
 <body>
-  <!-- Navigation Header -->
-  <header class="main-header">
-    <nav class="dropdown-nav">
-      <ul>
-        <li><a href="overview.html">Trade</a></li>
-        <li><a href="send.html">Send</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <!-- Main Content: Asset Overview -->
-  <main>
+  <!-- Global Sidebar -->
+  <nav class="sidebar collapsed" id="sidebar">
+    <!-- Menu button as a single clickable element -->
+    <button id="menu-btn" class="menu-button">
+      <span class="menu-logo">☰</span>
+      <span class="menu-text">Menu</span>
+    </button>
+    <ul>
+      <!-- Dropdown for Trends -->
+      <li class="dropdown">
+        <a href="#" id="trends-link" class="dropdown-toggle">
+          <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
+          <span class="nav-text">Trends</span>
+          <span class="arrow-indicator">&#9662;</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="home.html" id="home-link">
+              <img src="Images/home-icon.png" alt="Home" class="nav-logo">
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="trade.html" id="send-link">
+              <img src="Images/send-logo.png" alt="Send" class="nav-logo">
+              <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- Other Sidebar Items -->
+      <li>
+        <a href="city.html" id="city-link">
+          <img src="Images/building-icon.png" alt="City" class="nav-logo">
+          <span class="nav-text">Your City</span>
+        </a>
+      </li>
+      <li>
+        <a href="activity.html" id="activity-link">
+          <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
+          <span class="nav-text">Recent</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html" id="community-link">
+          <img src="Images/community-icon.png" alt="Community" class="nav-logo">
+          <span class="nav-text">Community</span>
+        </a>
+      </li>
+    </ul>
+    <div class="logout-container">
+      <a href="index.html" id="logout-link">
+        <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
+        <span class="nav-text">Logout</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Container for Main Content -->
+  <div class="page-container">
+    <!-- Asset Overview Section -->
     <section class="asset-overview">
       <h1>Asset Overview</h1>
-      <table class="assets-table">
-        <thead>
-          <tr>
-            <th>Logo</th>
-            <th>Asset Name</th>
-            <th>24h Change</th>
-            <th>Sell Price</th>
-            <th>Buy Price</th>
-          </tr>
-        </thead>
-        <tbody id="assets-tbody">
-          <!-- Example rows; in a real app these would be generated dynamically -->
-          <tr data-asset-id="btc">
-            <td><img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo"></td>
-            <td>Bitcoin</td>
-            <td class="positive">+2.34%</td>
-            <td>$40,000</td>
-            <td>$40,100</td>
-          </tr>
-          <tr data-asset-id="eth">
-            <td><img src="Images/eth-logo.png" alt="Ethereum Logo" class="asset-logo"></td>
-            <td>Ethereum</td>
-            <td class="negative">-1.12%</td>
-            <td>$2,500</td>
-            <td>$2,510</td>
-          </tr>
-          <!-- Add additional asset rows as needed -->
-        </tbody>
-      </table>
+      <div class="asset-header-row">
+        <div class="header-market">Market</div>
+        <div class="header-change">Change</div>
+        <div class="header-sell">Sell</div>
+        <div class="header-buy">Buy</div>
+      </div>
+      <!-- Each asset row is clickable (wrapped in an anchor tag or has a click handler) -->
+      <div class="asset-row" data-asset-id="btc">
+        <img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo">
+        <div class="asset-name">Bitcoin</div>
+        <div class="asset-change positive">+0.32%</div>
+        <div class="sell-price">$95029.11</div>
+        <div class="buy-price">$97038.12</div>
+      </div>
+      <div class="asset-row" data-asset-id="eth">
+        <img src="Images/eth-logo.png" alt="Ethereum Logo" class="asset-logo">
+        <div class="asset-name">Ethereum</div>
+        <div class="asset-change positive">+1.66%</div>
+        <div class="sell-price">$2,587.47</div>
+        <div class="buy-price">$2,642.80</div>
+      </div>
+      <div class="asset-row" data-asset-id="xcn">
+        <img src="Images/xcn-logo.png" alt="XCN Logo" class="asset-logo">
+        <div class="asset-name">Chain</div>
+        <div class="asset-change positive">+1.78</div>
+        <div class="sell-price">$2,647.13</div>
+        <div class="buy-price">$2,852.63</div>
+      </div>
+      <div class="asset-row" data-asset-id="vine">
+        <img src="Images/vine-logo.png" alt="VINE Logo" class="asset-logo">
+        <div class="asset-name">Ethereum</div>
+        <div class="asset-change positive">+3123%</div>
+        <div class="sell-price">$1142.22</div>
+        <div class="buy-price">$1,213.28</div>
+      </div>
+      <div class="asset-row" data-asset-id="trump">
+        <img src="Images/trump-logo.png" alt="Trump Logo" class="asset-logo">
+        <div class="asset-name">Trump</div>
+        <div class="asset-change negative">-22.30%</div>
+        <div class="sell-price">$1,563.12</div>
+        <div class="buy-price">$1,694.22</div>
+      </div>
+      <div class="asset-row" data-asset-id="ufd">
+        <img src="Images/ufd-logo.png" alt="UFD Logo" class="asset-logo">
+        <div class="asset-name">UFD</div>
+        <div class="asset-change positive">+8.27%</div>
+        <div class="sell-price">$5,004.39</div>
+        <div class="buy-price">$5,454.26</div>
+      </div>
+      <div class="asset-row" data-asset-id="toshi">
+        <img src="Images/toshi-logo.png" alt="Toshi Logo" class="asset-logo">
+        <div class="asset-name">Toshi</div>
+        <div class="asset-change positive">+18.04%</div>
+        <div class="sell-price">$7,000.19</div>
+        <div class="buy-price">$7,204.95</div>
+      </div>
+      <div class="asset-row" data-asset-id="fartboy">
+        <img src="Images/fartboy-logo.png" alt="FARTBOY Logo" class="asset-logo">
+        <div class="asset-name">FARTBOY</div>
+        <div class="asset-change positive">+5.68%</div>
+        <div class="sell-price">$1,436.91</div>
+        <div class="buy-price">$1,574.32</div>
+      </div>
     </section>
-  </main>
+  </div>
 </body>
 </html>
