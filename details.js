@@ -1,22 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // -------------------------
-    // Parse Asset from URL and Update Asset Details
-    // -------------------------
+    // Parse the asset from the URL query parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const assetId = urlParams.get("asset") || "btc"; // default to Bitcoin if not provided
+    const assetId = urlParams.get("asset") || "btc"; // Default to Bitcoin if not provided
   
+    // Get references to the asset detail elements in the header
     const assetNameElem = document.getElementById("asset-name");
     const assetPriceElem = document.getElementById("asset-price");
     const assetLogoElem = document.getElementById("asset-logo");
     const modalTitleElem = document.getElementById("modal-title");
   
-    // Set default price range; adjust these values based on asset type.
-    let minPrice = 10000;
-    let maxPrice = 30000;
+    // Define default price range and update details based on assetId
+    let minPrice = 83500;
+    let maxPrice = 85000;
   
     if (assetId === "btc") {
       assetNameElem.textContent = "Bitcoin";
-      assetPriceElem.textContent = "97038.12";
+      assetPriceElem.textContent = "$97,038.12";
       assetLogoElem.src = "Images/btc-logo.png";
       modalTitleElem.textContent = "Trade Bitcoin";
       minPrice = 95000;
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       assetLogoElem.src = "Images/eth-logo.png";
       modalTitleElem.textContent = "Trade Ethereum";
       minPrice = 2450;
-      maxPrice = 2650;
+      maxPrice = 2750;
     } else if (assetId === "vine") {
       assetNameElem.textContent = "Vine";
       assetPriceElem.textContent = "$1,213.28";
@@ -35,95 +34,99 @@ document.addEventListener("DOMContentLoaded", () => {
       modalTitleElem.textContent = "Trade Vine";
       minPrice = 1200;
       maxPrice = 1350;
-    } else if (assetId === "toshi") {
-        assetNameElem.textContent = "Toshi";
-        assetPriceElem.textContent = "$7,204.95";
-        assetLogoElem.src = "Images/toshi-logo.png";
-        modalTitleElem.textContent = "Trade Toshi";
-        minPrice = 7000;
-        maxPrice = 7350;
-    } else if (assetId === "trump") {
-        assetNameElem.textContent = "Trump";
-        assetPriceElem.textContent = "$1,694.22";
-        assetLogoElem.src = "Images/trump-logo.png";
-        modalTitleElem.textContent = "Trade Trump";
-        minPrice = 1680;
-        maxPrice = 2000;
-    } else if (assetId === "ufd") {
-        assetNameElem.textContent = "Unicorn Fart Dust";
-        assetPriceElem.textContent = "$5,454.26";
-        assetLogoElem.src = "Images/ufd-logo.png";
-        modalTitleElem.textContent = "Trade Unicorn Fart Dust";
-        minPrice = 5250;
-        maxPrice = 5550;
-    } else if (assetId === "xcn") {
-        assetNameElem.textContent = "Chain";
-        assetPriceElem.textContent = "$2,852.63";
-        assetLogoElem.src = "Images/xcn-logo.png";
-        modalTitleElem.textContent = "Trade Chain";
-        minPrice = 2750;
-        maxPrice = 3050;
-    } else if (assetId === "fartboy") {
-        assetNameElem.textContent = "FARTBOY";
-        assetPriceElem.textContent = "$1,574.32";
-        assetLogoElem.src = "Images/fartboy-logo.png";
-        modalTitleElem.textContent = "Trade FARTBOY";
-        minPrice = 1450;
-        maxPrice = 1650;
     } else if (assetId === "igp") {
-        assetNameElem.textContent = "IguanaPasta";
-        assetPriceElem.textContent = "$84,631.71";
-        assetLogoElem.src = "Images/igp-logo.png";
-        modalTitleElem.textContent = "Trade IguanaPasta";
-        minPrice = 83500;
-        maxPrice = 85000;
+      assetNameElem.textContent = "IguanaPasta";
+      assetPriceElem.textContent = "$84,631.71";
+      assetLogoElem.src = "Images/igp-logo.png";
+      modalTitleElem.textContent = "Trade IguanaPasta";
+      minPrice = 83500;
+      maxPrice = 85000;
+    } else if (assetId === "toshi") {
+      assetNameElem.textContent = "Toshi";
+      assetPriceElem.textContent = "$7,204.95";
+      assetLogoElem.src = "Images/toshi-logo.png";
+      modalTitleElem.textContent = "Trade Toshi";
+      minPrice = 7000;
+      maxPrice = 7350;
+    } else if (assetId === "trump") {
+      assetNameElem.textContent = "Trump";
+      assetPriceElem.textContent = "$1,694.22";
+      assetLogoElem.src = "Images/trump-logo.png";
+      modalTitleElem.textContent = "Trade Trump";
+      minPrice = 1680;
+      maxPrice = 2000;
+    } else if (assetId === "ufd") {
+      assetNameElem.textContent = "UFD";
+      assetPriceElem.textContent = "$5,454.26";
+      assetLogoElem.src = "Images/ufd-logo.png";
+      modalTitleElem.textContent = "Trade UFD";
+      minPrice = 5250;
+      maxPrice = 5550;
+    } else if (assetId === "xcn") {
+      assetNameElem.textContent = "XCN";
+      assetPriceElem.textContent = "$2,852.63";
+      assetLogoElem.src = "Images/xcn-logo.png";
+      modalTitleElem.textContent = "Trade XCN";
+      minPrice = 2750;
+      maxPrice = 3050;
+    } else if (assetId === "fartboy") {
+      assetNameElem.textContent = "FARTBOY";
+      assetPriceElem.textContent = "$1,547.32";
+      assetLogoElem.src = "Images/fartboy-logo.png";
+      modalTitleElem.textContent = "Trade FARTBOY";
+      minPrice = 1450;
+      maxPrice = 1650;
     }
-
+  
     const now = new Date();
-    // Calculate the start time (30 minutes before now)
     const startTime = new Date(now.getTime() - 30 * 60000);
-    // Generate an array of 30 labels, each one minute apart
+    const dataCount = 30;
     const timeLabels = [];
-    const dataCount = 30; // Number of data points (and labels)
     for (let i = 0; i < dataCount; i++) {
       let labelTime = new Date(startTime.getTime() + i * 60000);
       let hours = labelTime.getHours();
       let minutes = labelTime.getMinutes();
-      // Format hours and minutes as two-digit strings
       if (hours < 10) { hours = "0" + hours; }
       if (minutes < 10) { minutes = "0" + minutes; }
       timeLabels.push(`${hours}:${minutes}`);
     }
-  
-    // -------------------------
-    // Generate Random Price Data within the Specified Range
-    // -------------------------
-    let dataPoints = [];
-    for (let i = 0; i < dataCount; i++) {
-      let randomPrice = (Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2);
-      dataPoints.push(randomPrice);
-    }
-  
-    // Optional: Store the chart data in sessionStorage (if needed for the session)
-    const chartData = { labels: timeLabels, data: dataPoints };
-    sessionStorage.setItem("assetChartData", JSON.stringify(chartData));
 
-    const currentPriceStr = assetPriceElem.textContent;
-    const currentPrice = parseFloat(currentPriceStr.replace(/[^0-9.]/g, ""));
-    // Ensure the chartData array has the expected length and override the last element
-    if (chartData.data.length >= dataCount) {
-      chartData.data[dataCount - 1] = currentPrice;
+    let chartData;
+    if (assetId === "igp") {
+      const storedData = sessionStorage.getItem("igpChartData");
+      if (storedData) {
+        chartData = JSON.parse(storedData);
+        chartData.labels = timeLabels;
+      } else {
+        const dataPoints = [];
+        for (let i = 0; i < dataCount; i++) {
+          let randomPrice = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
+          dataPoints.push(randomPrice);
+        }
+        const currentPrice = parseFloat(assetPriceElem.textContent.replace(/[^0-9.]/g, ""));
+        dataPoints[dataCount - 1] = currentPrice;
+        chartData = { labels: timeLabels, data: dataPoints };
+        sessionStorage.setItem("igpChartData", JSON.stringify(chartData));
+      }
     } else {
-      // If for some reason the length is less, push the price at the end
-      chartData.data.push(currentPrice);
+      const storageKey = assetId + "ChartData";
+      let storedData = sessionStorage.getItem(storageKey);
+      if (storedData) {
+        chartData = JSON.parse(storedData);
+        chartData.labels = timeLabels;
+      } else {
+        const dataPoints = [];
+        for (let i = 0; i < dataCount; i++) {
+          let randomPrice = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
+          dataPoints.push(randomPrice);
+        }
+        const currentPrice = parseFloat(assetPriceElem.textContent.replace(/[^0-9.]/g, ""));
+        dataPoints[dataCount - 1] = currentPrice;
+        chartData = { labels: timeLabels, data: dataPoints };
+        sessionStorage.setItem(storageKey, JSON.stringify(chartData));
+      }
     }
   
-    // Save the updated chartData back to sessionStorage
-    sessionStorage.setItem("assetChartData", JSON.stringify(chartData));
-
-    // -------------------------
-    // Initialize Chart.js Graph
-    // -------------------------
     const ctx = document.getElementById('assetChart').getContext('2d');
     const assetChart = new Chart(ctx, {
       type: 'line',
@@ -142,17 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Time'
-            }
-          },
+          x: { title: { display: true, text: 'Time' } },
           y: {
-            title: {
-              display: true,
-              text: 'Price ($)'
-            },
+            title: { display: true, text: 'Price ($)' },
             min: minPrice,
             max: maxPrice
           }
@@ -160,9 +155,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   
-    // -------------------------
-    // Modal Functionality for the Trade Button
-    // -------------------------
+    function incrementTime(timeStr) {
+      let [hours, minutes] = timeStr.split(':').map(Number);
+      minutes++;
+      if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+        if (hours >= 24) { hours = 0; }
+      }
+      let hoursStr = hours < 10 ? '0' + hours : hours;
+      let minutesStr = minutes < 10 ? '0' + minutes : minutes;
+      return `${hoursStr}:${minutesStr}`;
+    }
+  
+    setInterval(() => {
+      let newValue = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
+      assetChart.data.datasets[0].data.shift();
+      assetChart.data.labels.shift();
+      const lastLabel = assetChart.data.labels[assetChart.data.labels.length - 1];
+      const newLabel = incrementTime(lastLabel);
+      assetChart.data.datasets[0].data.push(newValue);
+      assetChart.data.labels.push(newLabel);
+      assetChart.update();
+      if (assetId === "igp") {
+        sessionStorage.setItem("igpChartData", JSON.stringify({
+          labels: assetChart.data.labels,
+          data: assetChart.data.datasets[0].data
+        }));
+      } else {
+        sessionStorage.setItem("assetChartData", JSON.stringify({
+          labels: assetChart.data.labels,
+          data: assetChart.data.datasets[0].data
+        }));
+      }
+    }, 60000);
+  
     const tradeButton = document.getElementById("trade-button");
     const modal = document.getElementById("trade-modal");
     const closeModal = document.getElementById("close-modal");
@@ -180,4 +207,5 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
       }
     });
-  });  
+  });
+  

@@ -1,15 +1,14 @@
 const APIKEY = "6796fc41f9d2bb1866181e28";
 const BASE_URL = "https://investicity-c8aa.restdb.io/rest/investicity-data";
 
-// Only run the authentication logic on the index page.
 if (document.body.id === "index-page") {
   document.addEventListener("DOMContentLoaded", initializeApp); 
 }
 
 function initializeApp() {
-  // Remove any inline onclicks and use these event listeners instead.
+  sessionStorage.removeItem("igpChartData");
   document.getElementById("signup-link").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault();
     toggleForms("signup");
   });
   document.getElementById("login-link").addEventListener("click", (e) => {
@@ -89,7 +88,6 @@ function handleLogin(e) {
         let formattedPercentage = Math.abs(percentageChange).toFixed(2) + "%";
         let dailyChangeString = `${sign}$${Math.abs(diff).toFixed(2)} (${sign}${formattedPercentage}) <span class="today">Today</span>`;
 
-        // Prepare settings for PATCH request to update the user's netWorth
         const settings = {
           method: "PUT",
           headers: {
@@ -100,11 +98,9 @@ function handleLogin(e) {
           body: JSON.stringify({ netWorth: newNetWorth })
         };
 
-        // Update the user record using their document _id
         fetch(`${BASE_URL}/${user._id}`, settings)
           .then(response => response.json())
           .then(updatedUser => {
-            // Store user info in localStorage
             localStorage.setItem("username", updatedUser.username);
             localStorage.setItem("userID", updatedUser.userID);
             localStorage.setItem("netWorth", updatedUser.netWorth);
@@ -159,10 +155,8 @@ function validateForm(type) {
 }
 
 function validateSignupForm() {
-  // First, validate the basic fields
   if (!validateForm("signup")) return false;
   
-  // Then, check that the password and confirm password match
   const password = document.getElementById("signup-password").value.trim();
   const confirmPassword = document.getElementById("signup-confirm-password").value.trim();
   

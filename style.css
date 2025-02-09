@@ -1,201 +1,191 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@300;400;700&display=swap');
 
-/* ---------------------------------
-   Global Resets & Base Styles
------------------------------------*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'K2D', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'K2D', sans-serif;
 }
 
 body {
-  background-color: black;
-  color: white;
-  min-height: 100vh;
-  /* Background image for home page */
-  background-image: url('Images/home-background.avif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    background-image: url('Images/home-background.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .container {
-  text-align: center;
-  margin-top: -10px;
-  width: 100%;
+    text-align: center;
+    margin-top: -10px;
+    width: 100%;
 }
 
 h1.title { 
-  font-size: 2.5rem;
-  margin: 20px 0;
+    font-size: 2.5rem;
+    margin: 20px 0;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .logo {
-  width: 70%;
-  max-width: 300px;
-  height: auto;
-  margin: 0;
+    width: 70%;
+    max-width: 300px;
+    height: auto;
+    margin: 0;
 }
 
 .small-logo {
-  width: 150px;
-  height: auto;
-  margin-top: -100px;
-  margin-bottom: 60px;
+    width: 150px;
+    height: auto;
+    margin-top: -100px;
+    margin-bottom: 60px;
 }
 
 .brand { 
-  font-size: 3vw;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: white;
-  margin-top: -100px;
-  margin-bottom: 60px;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    font-size: 3vw;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    margin-top: -100px;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .buttons {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 2vh 2vw;
-  margin: 10px;
-  border: 2px solid white;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 1.2vw;
-  transition: 0.3s;
+    display: inline-block;
+    padding: 2vh 2vw;
+    margin: 10px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2vw;
+    transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 @media (max-width: 768px) {
-  .logo {
-    width: 60%; 
-    max-width: 200px;
-  }
-  .btn {
-    font-size: 4vw;
-    padding: 3vh 8vw;
-  }
+    .logo {
+        width: 60%; 
+        max-width: 200px;
+    }
+    .btn {
+        font-size: 4vw;
+        padding: 3vh 8vw;
+    }
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
 }
 
 input {
-  width: 100%;
-  max-width: 400px;
-  padding: 8px;
-  border-radius: 24px;
-  border: none;
-  font-size: 18px;
-  text-align: left;
-  padding-left: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border-radius: 24px;
+    border: none;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 15px;
 }
 
 button {
-  width: 60%;
-  max-width: 220px;
-  padding: 12px;
-  border: 2px solid white;
-  border-radius: 25px;
-  background: black;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  white-space: nowrap;
-  text-align: center;
+    width: 60%;
+    max-width: 220px;
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+    text-align: center;
 }
 
 button:hover {
-  background: white;
-  color: black;
+    background: white;
+    color: black;
 }
 
 #signup-form {
-  display: none;
+    display: none;
 }
 
 #show-signup, #show-login {
-  cursor: pointer;
-  color: #fff;
-  text-decoration: underline;
-  margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+    margin-top: 20px;
 }
 
-/*------------------------------
-    User Info Section
-------------------------------*/
 .user-header {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 2000;
-  padding: 10px;
-  border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .user-info {
-  text-align: right;
+    text-align: right;
 }
 
 .user-id,
 .user-name {
-  margin: 0;
-  color: white;
-  font-size: 1.1rem;
+    margin: 0;
+    color: white;
+    font-size: 1.1rem;
 }
 
 .user-info p + p {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
-/* -------------------
-   Sidebar Styles
---------------------*/
-  .sidebar {
+.sidebar {
     display: flex;
-    flex-direction: column; /* Make sidebar a flex container */
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;            /* Expanded width */
+    width: 200px; 
     height: 100vh;
     background-color: #111;
     padding: 20px 10px;
@@ -203,15 +193,14 @@ button:hover {
     overflow-x: hidden;
     z-index: 1000;
     transition: width 0.3s, padding 0.3s;
-  }
+}
   
-  .sidebar.collapsed {
-    width: 80px;             /* Collapsed width */
+.sidebar.collapsed {
+    width: 80px;
     padding: 10px 5px;
-  }
+}
   
-  /* Menu Button */
-  .menu-button {
+.menu-button {
     display: flex;
     align-items: center;
     background: none;
@@ -223,134 +212,124 @@ button:hover {
     margin-left: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
+}
   
-  .menu-button:hover {
+.menu-button:hover {
     background-color: white;
     color: black;
-  }
+}
   
-  .menu-logo {
+.menu-logo {
     font-size: 32px;
-  }
+}
   
-  .menu-text {
+.menu-text {
     margin-left: 10px;
     font-size: 1.2rem;
     white-space: nowrap;
-  }
+}
   
-  .sidebar.collapsed .menu-button .menu-text {
+.sidebar.collapsed .menu-button .menu-text {
     display: none;
     padding-right: 0;
-  }
-  
-  /* Sidebar Navigation Items */
-  .sidebar ul {
+}
+
+.sidebar ul {
     list-style: none;
     padding: 0;
     margin: 20px 0 0 0;
-  }
+}
   
-  .sidebar li {
+.sidebar li {
     margin-bottom: 20px;
-  }
+}
   
-  .sidebar a {
+.sidebar a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
     padding: 10px;
     transition: background 0.3s;
-  }
+}
   
-  .sidebar a:hover {
+.sidebar a:hover {
     background-color: #333;
-  }
+}
   
-  .nav-logo {
+.nav-logo {
     width: 45px;
     height: 45px;
     object-fit: contain;
-  }
+}
   
-  .nav-text {
+.nav-text {
     margin-left: 10px;
     font-size: 1rem;
     white-space: nowrap;
-  }
+}
   
-  .sidebar.collapsed .nav-text {
+.sidebar.collapsed .nav-text {
     display: none;
-  }
+}
   
-  /* Arrow Indicator */
-  .arrow-indicator {
+.arrow-indicator {
     margin-left: auto;
     transition: transform 0.3s ease;
     font-size: 1.5rem;
-  }
+}
   
-  .sidebar.collapsed .arrow-indicator {
+.sidebar.collapsed .arrow-indicator {
     display: none;
-  }
+}
   
-  /* Dropdown Menu */
-  .dropdown-menu {
+.dropdown-menu {
     display: none;
     list-style: none;
     margin: 0;
-    padding-left: 20px; /* Indentation for submenu items */
-  }
+    padding-left: 20px;
+}
   
-  .dropdown.active .dropdown-menu {
+.dropdown.active .dropdown-menu {
     display: block;
-  }
+}
   
-  .dropdown-menu li {
+.dropdown-menu li {
     margin-bottom: 10px;
-  }
+}
   
-  .dropdown-menu a {
+.dropdown-menu a {
     padding: 8px 10px;
     border-radius: 5px;
     transition: background 0.3s;
-  }
+}
   
-  .dropdown-menu a:hover {
+.dropdown-menu a:hover {
     background-color: #333;
-  }
+}
   
-  .dropdown.active .arrow-indicator {
+.dropdown.active .arrow-indicator {
     transform: rotate(180deg);
-  }
+}
+
+.logout-container {
+    margin-top: auto;
+    padding: 10px 0;
+}
   
-  /* Logout Button */
-  .logout-container {
-    margin-top: auto; /* Push logout to the bottom */
-    padding: 10px 0;  /* Optional vertical padding */
-  }
-  
-  .logout-container a {
+.logout-container a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: white;
     padding: 10px;
     transition: background 0.3s;
-  }
+}
   
-  .logout-container a:hover {
+.logout-container a:hover {
     background-color: #333;
-  }
+}
   
-  /* Reuse existing .nav-logo and .nav-text styles for the logout link */
-  
-
-/* ---------------------------------
-   Main Content & Page Container Styles
------------------------------------*/
 .main-content {
   margin-left: 80px;
   padding: 20px;
@@ -366,10 +345,6 @@ button:hover {
   margin-left: 80px;
 }
 
-/* ---------------------------------
-   Additional Content Styles
------------------------------------*/
-/* Wallet Section */
 .wallet-overview {
   text-align: center;
   margin-top: 20px;
@@ -391,7 +366,6 @@ button:hover {
     color: white;
 }
 
-/* Popular Investments Section */
 .popular-investments {
   margin-top: 40px;
   text-align: center;
@@ -437,9 +411,6 @@ button:hover {
   color: #FF5252;
 }
 
-/* ------------------
-    Footer Styles
-------------------*/
 .footer {
   background-color: #222;
   padding: 10px;
@@ -457,9 +428,6 @@ button:hover {
   text-decoration: underline;
 }
 
-/* --------------------------
-   Stocks Chart Section
---------------------------*/
 .chart-container {
   position: relative;
   height: 300px;
@@ -467,9 +435,6 @@ button:hover {
   margin: 0 auto;
 }
 
-/* ------------------
-   News Section
---------------------------*/
 .news-feed {
   padding: 40px 20px;
   color: white;
@@ -512,9 +477,6 @@ button:hover {
   text-decoration: underline;
 }
 
-/* -------------------------------
-   Dropdown Menu (Sidebar Submenu)
----------------------------------*/
 .sidebar ul .dropdown-menu {
   display: none;
   list-style: none;
@@ -540,67 +502,54 @@ button:hover {
   background-color: #333;
 }
 
-/* =====================================================
-   New Sections for Reworked Pages (Overview & Details)
-=====================================================*/
-/* -------------------------------
-   Asset Overview Container
----------------------------------*/
 .asset-overview {
     padding: 20px;
     max-width: 1200px;
-    margin: 20px auto; /* Center the container with vertical spacing */
+    margin: 20px auto;
     background-color: #222;
     color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  .asset-overview h1 {
+.asset-overview h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
-  }
+}
 
-  /* Header Row for Overview Page */
 .asset-header-row {
     display: flex;
     align-items: center;
     padding: 15px 20px;
-    background-color: #333;  /* Dark background for the header */
+    background-color: #333;
     color: #fff;
     font-weight: bold;
     border-bottom: 1px solid #444;
-  }
+}
   
-  .asset-header-row > div {
-    /* Default styles for each header cell */
+.asset-header-row > div {
     text-align: center;
-  }
+}
   
-  /* Define column widths to match your asset rows */
-  .header-market {
-    text-align: left;     /* Takes up remaining space for the market info (logo and name) */
-  }
+.header-market {
+    text-align: left;
+}
   
-  .header-change {
+.header-change {
     width: 80px;
     margin-left: 210px;
-  }
+}
   
-  .header-sell {
+.header-sell {
     width: 100px;
     margin-left: 575px
-  }
+}
 
-  .header-buy {
+.header-buy {
     width: 100px;
-  }
+}
 
-  /* -------------------------------
-     Asset Row Styles
-  ---------------------------------*/
-/* Asset Row Styles */
 .asset-row {
     display: flex;
     align-items: center;
@@ -608,50 +557,47 @@ button:hover {
     border-bottom: 1px solid #444;
     transition: background-color 0.3s;
     cursor: pointer;
-  }
+}
   
-  .asset-row:hover {
+.asset-row:hover {
     background-color: #333;
-  }
+}
   
-  /* Asset Logo */
-  .asset-row .asset-logo {
+.asset-row .asset-logo {
     width: 50px;
     height: auto;
     margin-right: 15px;
-  }
+}
   
-  /* Asset Name */
-  .asset-row .asset-name {
-    flex: 1; /* This makes the asset name take up available space */
+.asset-row .asset-name {
+    flex: 1;
     font-size: 1.2rem;
     font-weight: bold;
-  }
+}
   
-  /* Asset Change with added left margin */
-  .asset-row .asset-change {
-    margin-right: 580px;  /* Adjust this value as needed */
+
+.asset-row .asset-change {
+    margin-right: 580px;
     width: 80px;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-  }
+}
   
-  .asset-row .asset-change.positive {
+.asset-row .asset-change.positive {
     color: #4CAF50;
-  }
+}
   
-  .asset-row .asset-change.negative {
+.asset-row .asset-change.negative {
     color: #FF5252;
-  }
-  
-  /* Sell and Buy Prices */
-  .asset-row .sell-price,
-  .asset-row .buy-price {
+}
+
+.asset-row .sell-price,
+.asset-row .buy-price {
     width: 100px;
     text-align: center;
     font-size: 1rem;
-  }  
+}  
   
 @media (max-width: 768px) {
     .assets-table th, 
@@ -659,7 +605,7 @@ button:hover {
       padding: 8px;
       font-size: 0.8rem;
     }
-  }
+}
 
 .asset-details {
   background-color: #222;
@@ -692,7 +638,6 @@ button:hover {
   border-radius: 4px;
 }
 
-/* Asset Details Main Content: Two-Column Layout */
 .asset-content {
   display: flex;
   gap: 20px;
@@ -701,19 +646,16 @@ button:hover {
   margin: 0 auto;
 }
 
-/* Left Column (Graph and Stats) */
 .asset-left {
   flex: 2;
 }
 
-/* Graph Area */
 .asset-graph {
   min-height: 300px;
   border: 1px solid #ccc;
   margin-bottom: 20px;
 }
 
-/* Stats Area (below the graph) with Two-Column Grid */
 .asset-stats {
   text-align: left;
 }
@@ -724,7 +666,6 @@ button:hover {
   gap: 10px;
 }
 
-/* Right Column (Other Assets) */
 .asset-right {
   flex: 1;
   display: flex;
@@ -732,7 +673,6 @@ button:hover {
   align-items: center;
 }
 
-/* Other Assets Section */
 .other-assets {
   text-align: center;
   background-color: #fff;
@@ -751,7 +691,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* Trade Popup Modal */
 .modal {
   display: none;
   position: fixed;
@@ -784,9 +723,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* --------------------------------
-   Miscellaneous
--------------------------------- */
 canvas {
   max-width: 100%;
 }
