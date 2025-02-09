@@ -48,26 +48,23 @@ document.addEventListener("DOMContentLoaded", () => {
       timeLabels.push(`${hours}:${minutes}`);
     }
     
-    // Check if chart data for IGP is stored in sessionStorage
     let chartData;
     const storedData = sessionStorage.getItem("igpChartData");
     if (storedData) {
       chartData = JSON.parse(storedData);
-      chartData.labels = timeLabels; // Update labels to current session
+      chartData.labels = timeLabels;
     } else {
       const dataPoints = [];
       for (let i = 0; i < dataCount; i++) {
         let randomPrice = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
         dataPoints.push(randomPrice);
       }
-      // Ensure the last data point reflects the current asset price (here we simply keep it)
       const currentPrice = dataPoints[dataCount - 1];
       dataPoints[dataCount - 1] = currentPrice;
       chartData = { labels: timeLabels, data: dataPoints };
       sessionStorage.setItem("igpChartData", JSON.stringify(chartData));
     }
     
-    // Initialize the Chart.js graph on canvas with id "marketChart"
     const ctx = document.getElementById('marketChart').getContext('2d');
     const marketChart = new Chart(ctx, {
       type: 'line',
@@ -96,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     
-    // Helper function to increment a time label by one minute
     function incrementTime(timeStr) {
       let [hours, minutes] = timeStr.split(':').map(Number);
       minutes++;
@@ -110,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${hoursStr}:${minutesStr}`;
     }
     
-    // Update the chart every minute
     setInterval(() => {
       let newValue = parseFloat((Math.random() * (maxPrice - minPrice) + minPrice).toFixed(2));
       marketChart.data.datasets[0].data.shift();
@@ -120,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
       marketChart.data.datasets[0].data.push(newValue);
       marketChart.data.labels.push(newLabel);
       marketChart.update();
-      // Update sessionStorage with the new chart data
       chartData.data = marketChart.data.datasets[0].data;
       chartData.labels = marketChart.data.labels;
       sessionStorage.setItem("igpChartData", JSON.stringify(chartData));

@@ -10,9 +10,7 @@
   <script src="sidebar.js" defer></script>
 </head>
 <body>
-  <!-- Global Sidebar -->
   <nav class="sidebar collapsed" id="sidebar">
-    <!-- Sidebar content remains unchanged -->
     <button id="menu-btn" class="menu-button">
       <span class="menu-logo">☰</span>
       <span class="menu-text">Menu</span>
@@ -72,9 +70,7 @@
       </div>
   </nav>
 
-  <!-- Page Container for Main Content -->
   <div class="page-container">
-    <!-- Asset Details Header (content header) -->
     <header class="asset-details">
       <div class="asset-info">
         <img id="asset-logo" src="Images/btc-logo.png" alt="Logo" class="asset-logo-large" />
@@ -86,9 +82,7 @@
       </div>
     </header>
 
-    <!-- Main Asset Content: Two-column layout -->
     <main class="asset-content">
-      <!-- Left Column: Graph and Stats -->
       <div class="asset-left">
         <section class="asset-graph">
           <canvas id="assetChart" width="400" height="300"></canvas>
@@ -103,21 +97,18 @@
         </section>
       </div>
 
-      <!-- Right Column: Other Assets -->
       <div class="asset-right">
         <aside class="other-assets">
           <h2>Other Assets</h2>
           <div class="other-assets-buttons">
             <button onclick="location.href='details.html?asset=eth'">Ethereum</button>
             <button onclick="location.href='details.html?asset=igp'">IguanaPasta</button>
-            <!-- Additional asset buttons as needed -->
           </div>
         </aside>
       </div>
     </main>
   </div>
 
-  <!-- Trade Popup Modal -->
   <div id="trade-modal" class="modal">
     <div class="modal-content">
       <span id="close-modal" class="close-button">&times;</span>

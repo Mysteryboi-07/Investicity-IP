@@ -5,21 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asset Overview</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Include the sidebar script (if used site-wide) -->
   <script src="sidebar.js" defer></script>
-  <!-- Include overview-specific JS -->
   <script src="overview.js" defer></script>
 </head>
 <body>
-  <!-- Global Sidebar -->
   <nav class="sidebar collapsed" id="sidebar">
-    <!-- Menu button as a single clickable element -->
     <button id="menu-btn" class="menu-button">
       <span class="menu-logo">☰</span>
       <span class="menu-text">Menu</span>
     </button>
     <ul>
-      <!-- Dropdown for Trends -->
       <li class="dropdown">
         <a href="#" id="trends-link" class="dropdown-toggle">
           <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
@@ -47,7 +42,6 @@
           </li>
         </ul>
       </li>
-      <!-- Other Sidebar Items -->
       <li>
         <a href="city.html" id="city-link">
           <img src="Images/building-icon.png" alt="City" class="nav-logo">
@@ -75,9 +69,7 @@
     </div>
   </nav>
 
-  <!-- Page Container for Main Content -->
   <div class="page-container">
-    <!-- Asset Overview Section -->
     <section class="asset-overview">
       <h1>Asset Overview</h1>
       <div class="asset-header-row">
@@ -86,7 +78,6 @@
         <div class="header-sell">Sell</div>
         <div class="header-buy">Buy</div>
       </div>
-      <!-- Each asset row is clickable (wrapped in an anchor tag or has a click handler) -->
       <div class="asset-row" data-asset-id="btc">
         <img src="Images/btc-logo.png" alt="Bitcoin Logo" class="asset-logo">
         <div class="asset-name">Bitcoin</div>

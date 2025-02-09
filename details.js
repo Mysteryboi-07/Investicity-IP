@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Parse the asset from the URL query parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const assetId = urlParams.get("asset") || "btc"; // Default to Bitcoin if not provided
+    const assetId = urlParams.get("asset") || "btc";
   
-    // Get references to the asset detail elements in the header
     const assetNameElem = document.getElementById("asset-name");
     const assetPriceElem = document.getElementById("asset-price");
     const assetLogoElem = document.getElementById("asset-logo");
     const modalTitleElem = document.getElementById("modal-title");
-  
-    // Define default price range and update details based on assetId
     let minPrice = 83500;
     let maxPrice = 85000;
   

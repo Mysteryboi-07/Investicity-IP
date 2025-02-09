@@ -1,7 +1,3 @@
-/* =================================
-   SEND PAGE SPECIFIC STYLES
-   (For Transfer Center)
-=================================*/
 .send-section {
     max-width: 600px;
     margin: 40px auto;
@@ -101,7 +97,6 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* QR Modal Popup Styles */
 .modal {
     display: none;
     position: fixed;
@@ -166,7 +161,6 @@
     padding: 20px;
   }
   
-  /* Left Column: City Title & Overhead Image */
   .city-left {
     flex: 2;
     display: flex;
@@ -188,7 +182,6 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
   
-  /* Right Column: City Details */
   .city-details {
     flex: 1;
     background-color: rgba(34, 34, 34, 0.9);
@@ -226,7 +219,6 @@
     background: rgba(255,255,255,0.2);
   }
   
-  /* Badge Modal Popup Styles */
   .modal {
     display: none;
     position: fixed;
@@ -266,16 +258,12 @@
     cursor: pointer;
   }
   
-  /* Optional: Badge image styling (if needed) */
   .badge-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
   }
-  
-/* =================================
-   ACTIVITY PAGE SPECIFIC STYLES
-=================================*/
+
 .activity-section {
     max-width: 1000px;
     margin: 40px auto;
@@ -316,9 +304,6 @@
     text-align: center;
   }
 
-/* =================================
-   COMMUNITY PAGE SPECIFIC STYLES
-=================================*/
 .community-section {
     max-width: 1000px;
     margin: 40px auto;
@@ -327,7 +312,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     color: #fff;
-    /* Center align for smaller widths */
     text-align: center;
   }
   
@@ -336,18 +320,13 @@
     margin-bottom: 20px;
   }
   
-  /* Main Community Content: Channels and Chat Area */
   .community-content {
     display: flex;
     gap: 10px;
-    height: 70vh; /* Adjust the height as desired */
+    height: 70vh;
   }
-  
-  /* Channels Container: Placed to the left of the chat area */
+
   .channels-container {
-    /* The width is fixed, based on sidebar state: 
-       When sidebar is collapsed: 200px, when expanded: 170px.
-       For this example, we’ll assume collapsed state; you can override with JS or media queries if needed. */
     width: 200px;
     background-color: #444;
     border-radius: 8px;
@@ -380,7 +359,6 @@
     color: #fff;
   }
   
-  /* Chat Area: occupies remaining width */
   .chat-area {
     flex: 1;
     display: flex;
@@ -390,7 +368,6 @@
     overflow: hidden;
   }
   
-  /* Chat Header Bar */
   .chat-header {
     background-color: #2a2a2a;
     padding: 10px 15px;
@@ -403,7 +380,6 @@
     text-align: left;
   }
   
-  /* Chat Container for messages */
   .chat-container {
     flex: 1;
     padding: 15px;
@@ -411,7 +387,6 @@
     text-align: left;
   }
   
-  /* Discord-like Chat Message Styles */
   .chat-message {
     margin-bottom: 15px;
   }
@@ -449,7 +424,7 @@
 }
 
 #send-message-btn {
-    width: 100px;  /* Fixed width to make it smaller */
+    width: 100px;
     padding: 10px;
     border-radius: 25px;
     border: 2px solid #fff;

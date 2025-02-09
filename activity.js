@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Dummy transaction data; replace or extend with real data as needed.
     const transactions = [
       { date: "Date", type: "Type", asset: "Asset", amount: "Amount" },
       { date: "2025-02-24", type: "Sell", asset: "Toshi", amount: "$5,000" },
