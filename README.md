@@ -67,6 +67,12 @@ The photos used in this site are listed below:
     5. https://www.zarla.com/images/zarla-the-zone-1x1-2400x2400-20240306-7bx34b7by3w7kvygbtwv.png?crop=1:1,smart&width=250&dpr=2
     6. https://www.etoro.com/markets/btc
     7. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsKpP4Sd5a4t6knC4GpkiKgbbBdlij9t8mpg&s
+    8. https://s2.coinmarketcap.com/static/img/coins/200x200/18679.png
+    9. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhYAYIa3ctrZ9u8QSo7SOIPgccMo0IyHhRg&s
+    10. https://img.cryptorank.io/coins/unicorn_fart_dust1734527655453.png
+    11. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT42vehVOnGCGxxKNLurgKCOX3vK1AB--f6Ug&s
+    12. https://s1.coincarp.com/logo/1/fartboy.png?style=200&v=1739021059
+    13. https://www.qr-code-generator.com/
 
 ## Acknowledgements
 
