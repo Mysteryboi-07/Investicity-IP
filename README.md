@@ -71,6 +71,8 @@ The photos used in this site are listed below:
 ## Acknowledgements
 
 I used inspiration from Future City for the base idea, discord for the community chat and etoro.com for the sidebar
-    
+
+
+Link to GitHub: https://github.com/Mysteryboi-07/Investicity-IP
     
   
