@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investicity - Your City</title>
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+  <!-- Lottie Player Script -->
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <!-- Scripts -->
+  <script src="sidebar.js" defer></script>
+  <script src="city.js" defer></script>
+</head>
+<body>
+  <!-- Global Sidebar -->
+  <nav class="sidebar collapsed" id="sidebar">
+    <button id="menu-btn" class="menu-button">
+      <span class="menu-logo">☰</span>
+      <span class="menu-text">Menu</span>
+    </button>
+    <ul>
+      <li class="dropdown">
+        <a href="#" id="trends-link" class="dropdown-toggle">
+          <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
+          <span class="nav-text">Trends</span>
+          <span class="arrow-indicator">&#9662;</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="home.html" id="home-link">
+              <img src="Images/home-icon.png" alt="Home" class="nav-logo">
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="send.html" id="send-link">
+              <img src="Images/send-logo.png" alt="Send" class="nav-logo">
+              <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="city.html" id="city-link">
+          <img src="Images/building-icon.png" alt="City" class="nav-logo">
+          <span class="nav-text">Your City</span>
+        </a>
+      </li>
+      <li>
+        <a href="activity.html" id="activity-link">
+          <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
+          <span class="nav-text">Recent</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html" id="community-link">
+          <img src="Images/community-icon.png" alt="Community" class="nav-logo">
+          <span class="nav-text">Community</span>
+        </a>
+      </li>
+    </ul>
+    <div class="logout-container">
+      <a href="index.html" id="logout-link">
+        <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
+        <span class="nav-text">Logout</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Container -->
+  <div class="page-container">
+    <section class="city-section">
+      <div class="city-content">
+        <!-- Left Column: City Title & Overhead Image -->
+        <div class="city-left">
+          <h1 class="city-title">Your City</h1>
+          <div class="city-overhead">
+            <img src="Images/city-unbuilt.png" alt="Overhead view of the city" class="city-photo">
+          </div>
+        </div>
+        <div class="city-details">
+            <p class="city-info">City#1<br>NYC</p>
+            <img src="Images/ESB-preview.png" alt="ESB Preview" class="esb-preview">
+            <button class="buy-building-btn" id="buy-esb-btn">Empire State Building</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="badge-modal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title" style="text-decoration: none;">Congratulations<br>You Earned a Badge!</h2>
+      <img src="Images/badge.png" alt="Badge" class="badge-image" style="max-width: 200px; margin: 20px 0;">
+      <button id="confirm-badge-btn" class="close-button" style="transform: translateX(-70px);">Confirm</button>
+    </div>
+  </div>
+</body>
+</html>

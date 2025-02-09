@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Investicity - Community</title>
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="style2.css" >
+  <script src="sidebar.js" defer></script>
+  <script src="community.js" defer></script>
+</head>
+<body>
+  <nav class="sidebar collapsed" id="sidebar">
+    <button id="menu-btn" class="menu-button">
+      <span class="menu-logo">☰</span>
+      <span class="menu-text">Menu</span>
+    </button>
+    <ul>
+      <li class="dropdown">
+        <a href="#" id="trends-link" class="dropdown-toggle">
+          <img src="Images/graph-icon.png" alt="Trends" class="nav-logo">
+          <span class="nav-text">Trends</span>
+          <span class="arrow-indicator">&#9662;</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="home.html" id="home-link">
+              <img src="Images/home-icon.png" alt="Home" class="nav-logo">
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="send.html" id="send-link">
+              <img src="Images/send-logo.png" alt="Send" class="nav-logo">
+              <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="city.html" id="city-link">
+          <img src="Images/building-icon.png" alt="City" class="nav-logo">
+          <span class="nav-text">Your City</span>
+        </a>
+      </li>
+      <li>
+        <a href="activity.html" id="activity-link">
+          <img src="Images/clock-icon.png" alt="Activity" class="nav-logo">
+          <span class="nav-text">Recent</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html" id="community-link">
+          <img src="Images/community-icon.png" alt="Community" class="nav-logo">
+          <span class="nav-text">Community</span>
+        </a>
+      </li>
+    </ul>
+    <div class="logout-container">
+      <a href="index.html" id="logout-link">
+        <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
+        <span class="nav-text">Logout</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <section class="community-section">
+      <div class="community-content">
+        <div class="channels-container">
+          <h2>Channels</h2>
+          <ul class="channel-list">
+            <li class="channel-item active" data-channel="general"># general</li>
+            <li class="channel-item" data-channel="random"># random</li>
+            <li class="channel-item" data-channel="help"># help</li>
+          </ul>
+        </div>
+        <div class="chat-area">
+          <div class="chat-header">
+            <h3 id="current-channel"># general</h3>
+          </div>
+          <div class="chat-container">
+            <!-- Messages from .js -->
+          </div>
+            <div class="chat-input">
+                <img src="Images/plus-icon.png" alt="Plus" class="plus-icon">
+                <input type="text" id="message-input" placeholder="Type your message..." />
+                <button id="send-message-btn">Send</button>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

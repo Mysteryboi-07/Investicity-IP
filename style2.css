@@ -1,0 +1,466 @@
+/* =================================
+   SEND PAGE SPECIFIC STYLES
+   (For Transfer Center)
+=================================*/
+.send-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+}
+.send-header {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-arrow {
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+.send-title {
+    font-size: 1.8rem;
+    margin: 0;
+}
+.send-amount-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+.amount-input {
+    width: 100%;
+    padding: 15px 60px 15px 15px;
+    border-radius: 25px 0 0 25px;
+    border: none;
+    font-size: 1.2rem;
+    text-align: left;
+    background-color: #fff;
+    color: #333;
+}
+.amount-dropdown {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    border-radius: 0 25px 25px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.divider-icon {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #fff;
+}
+.send-recipient-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+.recipient-input {
+    width: 100%;
+    padding: 15px 60px 15px 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.2rem;
+    text-align: left;
+    background-color: #fff;
+    color: #333;
+}
+.qr-icon {
+    position: absolute;
+    right: 78px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+.transfer-btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.transfer-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* QR Modal Popup Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+.modal .modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+.modal .modal-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+#modal-amount {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.modal-qr-code {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.close-button {
+    display: block;
+    margin: 20px auto 0;
+    margin-right: 80px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.city-section {
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+  }
+  
+  .city-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  /* Left Column: City Title & Overhead Image */
+  .city-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .city-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .city-overhead {
+    width: 100%;
+    max-width: 500px;
+  }
+  .city-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  /* Right Column: City Details */
+  .city-details {
+    flex: 1;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .city-info {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  .esb-preview {
+    width: 33%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  .buy-building-btn {
+    padding: 12px 20px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .buy-building-btn:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  /* Badge Modal Popup Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal .modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  .modal .modal-title {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+
+  }
+  .close-button {
+    display: block;
+    margin: 20px auto 0;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* Optional: Badge image styling (if needed) */
+  .badge-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+/* =================================
+   ACTIVITY PAGE SPECIFIC STYLES
+=================================*/
+.activity-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .activity-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .transaction-item {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .transaction-item .transaction-date,
+  .transaction-item .transaction-type,
+  .transaction-item .transaction-asset,
+  .transaction-item .transaction-amount {
+    flex: 1;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+/* =================================
+   COMMUNITY PAGE SPECIFIC STYLES
+=================================*/
+.community-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    color: #fff;
+    /* Center align for smaller widths */
+    text-align: center;
+  }
+  
+  .community-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Main Community Content: Channels and Chat Area */
+  .community-content {
+    display: flex;
+    gap: 10px;
+    height: 70vh; /* Adjust the height as desired */
+  }
+  
+  /* Channels Container: Placed to the left of the chat area */
+  .channels-container {
+    /* The width is fixed, based on sidebar state: 
+       When sidebar is collapsed: 200px, when expanded: 170px.
+       For this example, we’ll assume collapsed state; you can override with JS or media queries if needed. */
+    width: 200px;
+    background-color: #444;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: left;
+  }
+  .channels-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .channel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .channel-item {
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  .channel-item:hover {
+    background-color: #555;
+  }
+  .channel-item.active {
+    background-color: #666;
+    color: #fff;
+  }
+  
+  /* Chat Area: occupies remaining width */
+  .chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Chat Header Bar */
+  .chat-header {
+    background-color: #2a2a2a;
+    padding: 10px 15px;
+    border-bottom: 1px solid #444;
+  }
+  .chat-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: left;
+  }
+  
+  /* Chat Container for messages */
+  .chat-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    text-align: left;
+  }
+  
+  /* Discord-like Chat Message Styles */
+  .chat-message {
+    margin-bottom: 15px;
+  }
+  .chat-message-header {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+  .chat-message-body {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 5px;
+  }
+  
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 20px 20px;
+}
+
+.plus-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#message-input {
+  flex: 1;
+  min-width: 530px;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+}
+
+#send-message-btn {
+    width: 100px;  /* Fixed width to make it smaller */
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+#send-message-btn:hover {
+  background-color: rgba(255,255,255,0.2);
+}  

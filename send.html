@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Investicity - Send Asset</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Investicity - Transfer Center</title>
+  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="style2.css" >
   <script src="sidebar.js" defer></script>
   <script src="send.js" defer></script>
 </head>
@@ -29,15 +30,15 @@
             </a>
           </li>
           <li>
-            <a href="overview.html" id="overview-link">
-              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
-              <span class="nav-text">Overview</span>
-            </a>
-          </li>
-          <li>
             <a href="send.html" id="send-link">
               <img src="Images/send-logo.png" alt="Send" class="nav-logo">
               <span class="nav-text">Send</span>
+            </a>
+          </li>
+          <li>
+            <a href="overview.html" id="overview-link">
+              <img src="Images/overview-icon.png" alt="Overview" class="nav-logo">
+              <span class="nav-text">Overview</span>
             </a>
           </li>
         </ul>
@@ -62,7 +63,7 @@
       </li>
     </ul>
     <div class="logout-container">
-      <a href="logout.html" id="logout-link">
+      <a href="index.html" id="logout-link">
         <img src="Images/logout-icon.png" alt="Logout" class="nav-logo">
         <span class="nav-text">Logout</span>
       </a>
@@ -71,32 +72,32 @@
 
   <div class="page-container">
     <section class="send-section">
-      <h1>Send</h1>
-      <form id="send-form">
-        <input type="text" id="recipient-id" name="recipient" placeholder="Recipient's ID" required pattern="\d{10}">
-        <!-- Asset selection -->
-        <select id="asset-select" name="asset" required>
-          <option value="">Select Asset</option>
-          <option value="btc">Bitcoin</option>
-          <option value="eth">Ethereum</option>
-          <option value="vine">Vine</option>
-          <option value="igp">IguanaPasta</option>
-          <option value="toshi">Toshi</option>
-          <!-- Add additional assets as needed -->
-        </select>
-        <!-- Amount input -->
-        <input type="number" step="0.01" id="send-amount" name="amount" placeholder="Amount" required>
-        <!-- Submit button -->
-        <button type="submit" id="send-btn">Send</button>
-      </form>
-      <!-- QR Code Section -->
-      <div class="qr-code-section">
-        <button id="toggle-qr-btn" type="button">Show QR Code</button>
-        <div id="qr-code-container" style="display: none;">
-          <img src="Images/qr-code.png" alt="QR Code" class="qr-code-image">
-        </div>
+      <div class="send-header">
+        <h1 class="send-title">Transfer Center</h1>
       </div>
+      <div class="send-amount-container">
+        <input type="text" id="amount-input" class="amount-input" placeholder="Enter Amount">
+        <select id="amount-currency" class="amount-dropdown">
+          <option value="btc">BTC</option>
+          <option value="eth">ETH</option>
+        </select>
+      </div>
+      <div class="divider-icon">&#x25BC;</div>
+      <div class="send-recipient-container">
+        <input type="text" id="recipient-id" class="recipient-input" placeholder="Enter Recipient ID" required>
+        <img src="Images/qr-code.png" alt="QR Code" class="qr-icon">
+      </div>
+      <button id="transfer-btn" class="transfer-btn">TRANSFER</button>
     </section>
+  </div>
+
+  <div id="qr-modal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">TRANSFER</h2>
+      <p id="modal-amount"></p>
+      <img src="Images/qr-code-scan.png" alt="QR Code" class="modal-qr-code">
+      <button id="close-qr-modal" class="close-button">Close</button>
+    </div>
   </div>
 </body>
 </html>
