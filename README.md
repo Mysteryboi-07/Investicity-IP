@@ -61,17 +61,29 @@ Prices for Bitcoin and Ethereum were taken from etoro during time of coding
 
 The photos used in this site are listed below:
     1. https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-ai-image%2Fblack-white-image-stock-market-graph-going-up-graph-is-made-up-series-lines-dots-it-is-set-against-black-background_177453508.htm&psig=AOvVaw1MZ-yxGQu8rN3JR0czwOAN&ust=1739202364795000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNjFluz3tosDFQAAAAAdAAAAABAE
+    
     2. https://icons8.com/icon/44417/wechat
+    
     3. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBe5vp19uQ9h5OXbITQ8G8eUkey0vvsvI3Dw&s
+    
     4. https://cdn.drawception.com/images/panels/2013/11-26/92y9EZqLt5-2.png
+    
     5. https://www.zarla.com/images/zarla-the-zone-1x1-2400x2400-20240306-7bx34b7by3w7kvygbtwv.png?crop=1:1,smart&width=250&dpr=2
+    
     6. https://www.etoro.com/markets/btc
+    
     7. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsKpP4Sd5a4t6knC4GpkiKgbbBdlij9t8mpg&s
+    
     8. https://s2.coinmarketcap.com/static/img/coins/200x200/18679.png
+    
     9. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhYAYIa3ctrZ9u8QSo7SOIPgccMo0IyHhRg&s
+    
     10. https://img.cryptorank.io/coins/unicorn_fart_dust1734527655453.png
+    
     11. https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT42vehVOnGCGxxKNLurgKCOX3vK1AB--f6Ug&s
+    
     12. https://s1.coincarp.com/logo/1/fartboy.png?style=200&v=1739021059
+    
     13. https://www.qr-code-generator.com/
 
 ## Acknowledgements
